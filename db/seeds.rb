@@ -8,16 +8,32 @@
 
 require "faker"
 
-100.times do |i|
+50.times do
   User.create!(
-   password: "password",
-   first_name: Faker::Name.first_name,
-   last_name: Faker::Name.last_name,
-   email: Faker::Internet.email,
-   location: Faker::Address.full_address,
-   latitude: Faker::Address.latitude,
-   longitude: Faker::Address.longitude)
+    password: "password",
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    location: Faker::Address.full_address,
+    latitude: Faker::Address.latitude,
+    longitude: Faker::Address.longitude,
+    availability: true
+  )
 end
+puts "true faker ok"
+50.times do
+  User.create!(
+    password: "password",
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    location: Faker::Address.full_address,
+    latitude: Faker::Address.latitude,
+    longitude: Faker::Address.longitude,
+    availability: false
+  )
+end
+puts "false faker ok"
 # ADD JPEG PHOTOS LATER IN THE APP PROCESS
 
 # userone = User.create!(first_name: "T", last_name: "Lave", email: "lavellesine@gmail.com", password: "123456")

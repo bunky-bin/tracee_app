@@ -1,0 +1,8 @@
+<div class= "container"></div>
+  <h1>list of request received</h1>
+    <div class="card" style= "background-color: lavender;height: 300px;width: 600px;">
+      <% @request.each do |f| %>
+        <%= f.first_name %>
+      <% end%>
+    </div>
+</div>
