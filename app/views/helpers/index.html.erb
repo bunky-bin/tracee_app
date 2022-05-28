@@ -1,0 +1,13 @@
+<div class="container">
+<h1 style="center">Helper close to you</h1>
+    <div class="cards">
+      <% @helpers.each do |helper| %>
+          <% if helper.availability == true %>
+            <p>Hi! I'm <%=" #{helper.first_name} " %></p>
+            <p>last name <%= " #{helper.last_name}"  %></p>
+            <h3><%=link_to "Request help  #{helper.first_name}", helper_path(helper) %></h3>
+          <% else %>
+          <% end %>
+        <% end %>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="containair" style="width: 400px">
+
+
+    <div class="row   justify-content-center ">
+      <div class="card" >
+        <p>Hi my name is  <%= @helper.first_name %> <%= @helper.last_name %></p>
+
+          -
+            <p>My location at the moment is at <%= @helper.location %>.</p>
+          -
+          -
+
+  
+          <p><%= link_to "Resuest help  #{ @helper.first_name}", "#" %></p>
+          -
+          <p><%= link_to "Back list of helpers", helpers_path %></p>
+
+      </div>
+    </div>
+</div>
