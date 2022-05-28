@@ -1,9 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "https://res.cloudinary.com/bunkyboy/image/upload/v1653764279/tracee_1_ezn10z.png" %>
+      <%= image_tag "https://res.cloudinary.com/bunkyboy/image/upload/v1653769179/tracee_1_uftpzx.png" %>
     <% end %>
-
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -24,14 +23,14 @@
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "All Requests", "#", class: "dropdown-item" %>
+              <%= link_to "All Requests", helper_requests_path(current_user), class: "dropdown-item" %>
               <%= link_to "My Profile", edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Our Mission", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Log In", new_user_session_path, class: "nav-link" %>
