@@ -6,7 +6,6 @@ class CreateRequests < ActiveRecord::Migration[6.1]
       t.bigint :helper_id
       t.bigint :commuter_id
       t.references :users, null: false, foreign_key: true
-      t.references :reviews, null: false, foreign_key: true
 
       t.timestamps
     end
