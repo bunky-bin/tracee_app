@@ -3,9 +3,8 @@ class CreateRequests < ActiveRecord::Migration[6.1]
     create_table :requests do |t|
       t.string :accepted_time
       t.string :location
-      t.bigint :helper_id
-      t.bigint :commuter_id
-      t.references :users, null: false, foreign_key: true
+      t.references :commuter, index: true, foreign_key: { to_table: :users }
+      t.references :helper, index: true, foreign_key: { to_table: :users }
 
       t.timestamps
     end

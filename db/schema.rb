@@ -18,22 +18,21 @@ ActiveRecord::Schema.define(version: 2022_05_28_091033) do
   create_table "requests", force: :cascade do |t|
     t.string "accepted_time"
     t.string "location"
-    t.bigint "helper_id"
     t.bigint "commuter_id"
-    t.bigint "users_id", null: false
+    t.bigint "helper_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["users_id"], name: "index_requests_on_users_id"
+    t.index ["commuter_id"], name: "index_requests_on_commuter_id"
+    t.index ["helper_id"], name: "index_requests_on_helper_id"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.string "description"
-    t.bigint "request_id"
-    t.bigint "requests_id", null: false
+    t.bigint "request_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["requests_id"], name: "index_reviews_on_requests_id"
+    t.index ["request_id"], name: "index_reviews_on_request_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,6 +53,7 @@ ActiveRecord::Schema.define(version: 2022_05_28_091033) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "requests", "users", column: "users_id"
-  add_foreign_key "reviews", "requests", column: "requests_id"
+  add_foreign_key "requests", "users", column: "commuter_id"
+  add_foreign_key "requests", "users", column: "helper_id"
+  add_foreign_key "reviews", "requests"
 end
