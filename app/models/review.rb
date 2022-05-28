@@ -1,3 +1,3 @@
 class Review < ApplicationRecord
-  belongs_to :requests
+  belongs_to :request
 end
