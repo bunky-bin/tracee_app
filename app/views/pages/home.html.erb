@@ -1,8 +1,29 @@
-<div class="banner" style="background-image: url(https://res.cloudinary.com/bunkyboy/image/upload/v1653746768/bannerresized_qlqs9c.jpg);">
+<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<div class="banner">
   <div class="container">
-    <a class="btn btn-flat" href="#">Join now</a>
+    <div class="banner-welcome">
+    <% if user_signed_in? %>
+
+    <h1>tracee</h1>
+     <h2>get there safe.</h2>
+     <br>
+    <%= link_to "View Nearby Helpers", helpers_path, class: "btn btn-flat" %>
+    <%= link_to "Become A Helper", helpers_path, class: "btn btn-flat" %>
+
+    <% else %>
+
+    <h1>tracee</h1>
+      <h2>get there safe.</h2>
+        <h3>Our Mission</h3>
+        <p>We are a community of helpers empowering each other to feel safe.
+          Feeling uneasy walking home late at night? Get connected to a local helper who will walk with you until you get home safe. Protect yourself and protect others with Tracee.</p>
+          <h3><i class="fa-solid fa-person-walking"></i> get connected to helpers</h3>
+          <h3><i class="fa-solid fa-square-phone"></i> add friends or family to your contact list</h3>
+         <h3><i class="fa-solid fa-taxi"></i> contact local authorities</h3>
+    <%= link_to "Join now", new_user_registration_path, class: "btn btn-flat" %>
+
+    <% end %>
+    </div>
   </div>
-  
-  <h1><%= link_to "Helper list", helpers_path %></h1>
-  
 </div>
