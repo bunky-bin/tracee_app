@@ -8,4 +8,8 @@ class HelpersController < ApplicationController
     @request = Request.new
 
   end
+  def update
+    
+    
+  end
 end
