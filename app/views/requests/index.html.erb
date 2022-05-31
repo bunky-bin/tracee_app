@@ -6,3 +6,30 @@
       <% end%>
     </div>
 </div>
+<div id="login-container">
+  <% @helpers.each do |helper| %>
+    <% if helper.availability == true %>
+      <div class="profile-img"></div>
+      <h1>
+      <%=" #{helper.first_name}  #{helper.last_name}"  %>
+      </h1>
+      <div class="description">
+        ciao
+
+      </div>
+    >
+      <button>Request my help</button>
+      <footer>
+        <div class="likes">
+          <p><i class='fa fa-heart'></i></p>
+          <p>1.5K</p>
+        </div>
+        <div class="projects">
+          <p>Projects</p>
+          <p>154</p>
+        </div>
+    <% else %>
+    <% end %>
+  <% end %>
+  </footer>
+</div>

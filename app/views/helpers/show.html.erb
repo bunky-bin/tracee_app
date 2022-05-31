@@ -1,20 +1,25 @@
-<div class="containair" style="width: 400px">
 
 
-    <div class="row   justify-content-center ">
-      <div class="card" >
-        <p>Hi my name is  <%= @helper.first_name %> <%= @helper.last_name %></p>
+<div id="login-container">
 
-          -
-            <p>My location at the moment is at <%= @helper.location %>.</p>
-          -
-          -
-
-  
-          <p><%= link_to "Resuest help  #{ @helper.first_name}", "#" %></p>
-          -
-          <p><%= link_to "Back list of helpers", helpers_path %></p>
-
+      <div class="profile-img"></div>
+      <h1>
+      <div class ="helper_name">
+      <%=" #{@helper.first_name}  #{@helper.last_name}"  %>
       </div>
-    </div>
+      </h1>
+      <div class="description">
+        <p>little description about myself and what i doing.</p>
+      </div>
+      <button> <h5> <%= link_to "Resuest #{ @helper.first_name} support", "#" %> <h5></button>
+      <button> <h5> <%= link_to "Back list of helpers", helpers_path %> <h5> </button>
+      <footer>
+        <div class="likes">
+          <p><i class='fa fa-heart'></i></p>
+          <p>1.5K</p>
+        </div>
+        <div class="projects">
+
+
+  </footer>
 </div>
