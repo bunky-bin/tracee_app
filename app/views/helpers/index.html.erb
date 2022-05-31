@@ -1,13 +1,25 @@
-
-<div class="container">
-<h1 style="center">Helper close to you</h1>
-    <div class="cards">
-      <% @helpers.each do |helper| %>
+<div class="container" style="text-align: center;">
+ <h1 style="center">Helper close to you</h1>
+  <div class="container" >
+    <% @helpers.each do |helper| %>
           <% if helper.availability == true %>
-            <h1>Hi! I'm <%=" #{helper.first_name}  #{helper.last_name}"  %></h1>
-            <p><%=link_to "Request help  #{helper.first_name}", helper_path(helper) %></p>
+            <div class= "cards_list">
+              <div class="row">
+                <div class="column">
+                  Hi! I'm <%=" #{helper.first_name}  #{helper.last_name}"  %>
+                  <div class="row" >
+                    <span class="badge badge-secondary" style="text-align: left;">distance 300 metres</span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="column">
+                  <button type="button" class="btn btn-success mbot"><%=link_to "Connect ", helper_path(helper) %></button>
+                </div>
+              </div>
+            </div>
           <% else %>
           <% end %>
-        <% end %>
-    </div>
+    <% end %>
+  </div>
 </div>
