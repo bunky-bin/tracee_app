@@ -1,6 +1,7 @@
 <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<div class="banner">
+
+<div class="banner" style="background-image: url(https://res.cloudinary.com/bunkyboy/image/upload/v1654200010/6371939_z0wakj.jpg);">
   <div class="container">
     <div class="banner-welcome">
     <% if user_signed_in? %>
@@ -24,26 +25,24 @@
     <%= link_to "Join now", new_user_registration_path, class: "btn btn-flat" %>
 
     <% end %>
-      </div>
+
     </div>
   </div>
-<br><br>
-<div class="container">
-  <div class="how-to">
-    <h3>How it works</h3>
-      <p>As a helper and commuter: 1. explain how we connect to people nearby. 2. add family members to contact list. 3. pre-programmed emergency numbers </p>
-    </div>
 </div>
-<br><br>
-<div class="container">
-  <div class="leave-review">
+<br>
+
+<div class="more-info">
+  <img src="https://res.cloudinary.com/bunkyboy/image/upload/v1654206591/Walking_around-cuate_bckdoz.png" alt="lonely" align="right">
+    <h3>How it works</h3><br>
+      <p>As a helper and commuter: 1. explain how we connect to people nearby. 2. add family members to contact list. 3. pre-programmed emergency numbers </p>
+</div>
+
+<div class="more-info">
     <h3>Leave a review</h3>
       <p> Explain after the request you can leave a review for your helper.</p>
-  </div>
 </div>
-<div class="container">
-  <div class="leave-review">
+
+<div class="more-info">
     <h3>Finishing statement</h3>
       <p>Add finishing statement about the benefits to the community</p>
-  </div>
 </div>
