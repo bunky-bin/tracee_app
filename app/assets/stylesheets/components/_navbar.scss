@@ -1,9 +1,9 @@
 .navbar-lewagon {
+  display: flex;
   justify-content: space-between;
+  position: relative;
   background: transparent;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 20px;
+  padding: 15px 0 0;
   align-items: baseline;
   width: 100%;
 }
@@ -15,7 +15,7 @@
 .navbar-lewagon .navbar-brand img {
   width: 80px;
 
-  
+
 }
 .colorback{
   color: rgb(214, 139, 48);
