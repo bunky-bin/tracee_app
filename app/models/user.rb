@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :received_requests, class_name: "Request", foreign_key: "helper_id"
   has_many :requests, foreign_key: "commuter_id"
   has_many :reviews
+  attr_reader :helper_id, :commuter_id
 end

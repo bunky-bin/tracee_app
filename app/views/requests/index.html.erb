@@ -1,35 +1,13 @@
 <div class= "container"></div>
-  <h1>list of request received</h1>
-    <div class="card" style= "background-color: lavender;height: 300px;width: 600px;">
-      <% @request.each do |f| %>
-        <%= f.first_name %>
-      <% end%>
-    </div>
-</div>
-<div id="login-container">
-  <% @helpers.each do |helper| %>
-    <% if helper.availability == true %>
-      <div class="profile-img"></div>
-      <h1>
-      <%=" #{helper.first_name}  #{helper.last_name}"  %>
-      </h1>
-      <div class="description">
-        ciao
+  <h1>list of request made</h1>
+    <% @requests.each do |f| %>
+     <div class="card" style= "background-color: lavender;height: 120px;width: 400px; margin: 10px">
+     The location is <%= f.location%>
+      As commuter my name is <%= f.commuter.first_name %>
+      i going to meet <%= f.helper.first_name %>
+      request has made at <%= f.accepted_time %>
 
       </div>
-    >
-      <button>Request my help</button>
-      <footer>
-        <div class="likes">
-          <p><i class='fa fa-heart'></i></p>
-          <p>1.5K</p>
-        </div>
-        <div class="projects">
-          <p>Projects</p>
-          <p>154</p>
-        </div>
-    <% else %>
-    <% end %>
-  <% end %>
-  </footer>
+    <% end%>
+
 </div>
