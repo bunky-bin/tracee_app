@@ -1,0 +1,21 @@
+<%= console %>
+
+<div class="container">
+<% if @requests.last.commuter_id = current_user%>
+  The location is <%= @requests.last.location%>
+      As commuter my name is <%= @requests.last.commuter.first_name %>
+      I going to meet <%= @requests.last.helper.first_name %>
+      request has made at <%=@requests.last.accepted_time %>
+      </div>
+
+<% end %>
+</div>
+<div class="container">
+  The location is <%= @requests.last.location%>
+      As commuter my name is <%= @requests.last.commuter.first_name %>
+      I going to meet <%= @requests.last.helper.first_name %>
+      request has made at <%=@requests.last.accepted_time %>
+      </div>
+
+
+</div>
