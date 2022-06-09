@@ -38,6 +38,9 @@
                         autofocus: true,
                         placeholder: "Tell us a little about yourself!",
                         input_html: { autocomplete: "" }%>
+            <%= f.input :location,
+              input_html: { data: { geocoder_target: "location" } },
+              wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['pk.eyJ1IjoiYnVua3lib3kiLCJhIjoiY2wxcGE4bDU1MDhmYjNqb2E4aXZkam1yYSJ9.NWMx3RbJSU5N_T83-T5i8A'] } } %>
 
           </div>
 
