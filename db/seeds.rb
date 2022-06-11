@@ -1,3 +1,4 @@
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -53,7 +54,7 @@ sam_smith = User.new(
   password: "123456",
   email: "samsmith@gmail.com",
   bio: "Love singing",
-  availability: false
+  availability: true
 )
 sam_smith.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 sam_smith.save!
@@ -102,7 +103,7 @@ rory_north = User.new(
   password: "123456",
   email: "rorynorth@gmail.com",
   bio: "Local cabbie 24/7",
-  availability: false
+  availability: true
 )
 rory_north.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 rory_north.save!
@@ -161,7 +162,7 @@ rowann_bush = User.new(
   password: "123456",
   email: "rowannbush@gmail.com",
   bio: "Run my own business from home making Xmas decorations",
-  availability: false
+  availability: true
 )
 rowann_bush.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 rowann_bush.save!
@@ -176,7 +177,7 @@ kelly_britton = User.new(
   password: "123456",
   email: "kellybritton@gmail.com",
   bio: "Retired local copper I miss the beat, so always out on a stroll",
-  availability: false
+  availability: true
 )
 kelly_britton.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 kelly_britton.save!
@@ -191,7 +192,7 @@ cleo_smart = User.new(
   password: "123456",
   email: "cleosmart@gmail.com",
   bio: "Retired maths teacher",
-  availability: false
+  availability: true
 )
 cleo_smart.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 cleo_smart.save!
@@ -206,7 +207,7 @@ jessie_johnson = User.new(
   password: "123456",
   email: "jessiejohnson@gmail.com",
   bio: "Brought up ten children, and lucky to have twenty five grandchildren",
-  availability: false
+  availability: true
 )
 jessie_johnson.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 jessie_johnson.save!
@@ -225,3 +226,5 @@ jackie_haruki = User.new(
 )
 jackie_haruki.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 jackie_haruki.save!
+puts "seeds created"
+

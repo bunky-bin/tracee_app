@@ -1,8 +1,7 @@
-
-
-<h5> <%= link_to "live request",   helper_request_path(:commuter) %> <h5>
+<h5> <%= link_to "live request",   helper_request_path(:commuter) %> </h5>
 
 <div id="login-container">
+
        <% if @helper.photo.attached? %>
       <div class="profile-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @helper.photo.key, height: 300, crop: :fill %>')"
  >    </div>
@@ -17,12 +16,10 @@
       </h1>
       <div class="description">
         <p> <%= @helper.bio  %></p>
+      <div class="likes">
+        <p><i class='fa fa-heart'></i></p>
+        <p>1.5K</p>
+
       </div>
-      <button> <h5> <%= link_to "Resuest #{ @helper.first_name} support", new_helper_request_path(@helper, @request) %> <h5></button>
-      <button> <h5> <%= link_to "Back list of helpers", helpers_path %> <h5> </button>
-      <footer>
-        <div class="likes">
-          <p><i class='fa fa-heart'></i></p>
-          <p>1.5K</p>
-        </div>
+    </footer>
 </div>
