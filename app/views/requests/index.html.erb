@@ -1,6 +1,8 @@
 <div class= "container"></div>
   <h1>All Requests</h1>
+    <center>
     <% @requests.each do |f| %>
+
      <div class="card" style= "background-color: lavender;height: 120px;width: 400px; margin: 10px">
      The location is <%= f.location%>
       As commuter my name is <%= f.commuter.first_name %>
@@ -8,6 +10,8 @@
       request has made at <%= f.accepted_time %>
 
       <button> <h5> <%= link_to "add review", new_helper_review_path(f.id)  %> <h5> </button>
+
       </div>
     <% end%>
+    </center>
 </div>
