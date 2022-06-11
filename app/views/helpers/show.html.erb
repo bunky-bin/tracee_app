@@ -1,23 +1,19 @@
-
-
-<h5> <%= link_to "live request",   helper_request_path(:commuter) %> <h5>
+<h5> <%= link_to "live request",   helper_request_path(:commuter) %> </h5>
 
 <div id="login-container">
-
-      <div class="profile-img"></div>
-      <h1>
-      <div class ="helper_name">
-      <%=" #{@helper.first_name}  #{@helper.last_name}"  %>
+  <div class="profile-img"></div>
+    <div class ="helper_name">
+      <h1><%=" #{@helper.first_name}  #{@helper.last_name}"  %> </h1>
+    </div>
+    <div class="description">
+      <p>Description goes here</p>
+    </div>
+    <button> <h5> <%= link_to "Resuest #{ @helper.first_name} support", new_helper_request_path(@helper, @request) %> <h5></button>
+    <button> <h5> <%= link_to "Back list of helpers", helpers_path %> <h5> </button>
+    <footer>
+      <div class="likes">
+        <p><i class='fa fa-heart'></i></p>
+        <p>1.5K</p>
       </div>
-      </h1>
-      <div class="description">
-        <p>little description about myself and what i doing.</p>
-      </div>
-      <button> <h5> <%= link_to "Resuest #{ @helper.first_name} support", new_helper_request_path(@helper, @request) %> <h5></button>
-      <button> <h5> <%= link_to "Back list of helpers", helpers_path %> <h5> </button>
-      <footer>
-        <div class="likes">
-          <p><i class='fa fa-heart'></i></p>
-          <p>1.5K</p>
-        </div>
+    </footer>
 </div>
