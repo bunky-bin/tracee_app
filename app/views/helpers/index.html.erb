@@ -1,31 +1,31 @@
-<div class="container" style="text-align: center;">
- <h1 style="center">Helpers near you</h1>
-
-  <div style="width: 100%; height: 500px;"
+<div class="container">
+ <h1>Helpers near you</h1>
+  <br>
+  <div style="width: 100%; height: 400px;"
     data-controller="mapbox"
     data-mapbox-markers-value="<%= @markers.to_json %>"
-    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 
   <div class="container" >
     <% @helpers.each do |helper| %>
       <% if helper.availability == true %>
         <div class= "cards_list">
           <div class="row">
-            <div class="column">
-              <p>Hi! My name is <%=" #{helper.first_name}  #{helper.last_name}"  %></p>
-                <div class="row" >
-                <span class="badge badge-secondary" style="text-align: left;">distance 300 metres</span>
-                </div>
-            </div>
+            <h2>Hi! My name is <%=" #{helper.first_name}  #{helper.last_name}" %></h2>
           </div>
           <div class="row">
-            <div class="column">
-              <button type="button" class="btn btn-success mbot"><%=link_to "Connect ", helper_path(helper) %></button>
+            <p>About me: <%=" #{helper.description}" %> </p>
+            <p>distance 300 metres</p>
+          </div>
+          <div class="row">
+            <div class="column" align= "center">
+          <%= link_to "Connect", helper_path(helper), class: "btn btn-flat" %>
             </div>
           </div>
         </div>
-          <% else %>
-          <% end %>
+      <% else %>
+      <% end %>
     <% end %>
   </div>
 </div>
