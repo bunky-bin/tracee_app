@@ -9,18 +9,13 @@
 
   <div class="container" >
     <% @helpers.each do |helper| %>
-
-          <% if helper.availability == true %>
-            <div class= "cards_list">
-               <% if helper.photo.attached? %>
-               <%= cl_image_tag(helper.photo.key, width: 400, height: 300, crop: :fill) %>
-               <% end %>
-              <div class="row">
-                <div class="column">
-                  Hi! I'm <%=" #{helper.first_name}  #{helper.last_name}"  %>
-                  <div class="row" >
-                    <span class="badge badge-secondary" style="text-align: left;">distance 300 metres</span>
-                  </div>
+      <% if helper.availability == true %>
+        <div class= "cards_list">
+          <div class="row">
+            <div class="column">
+              <p>Hi! My name is <%=" #{helper.first_name}  #{helper.last_name} "  %></p>
+                <div class="row" >
+                <span class="badge badge-secondary" style="text-align: left;"><%= "#{helper.location}" %></span>
                 </div>
               </div>
               <div class="row">
@@ -36,3 +31,4 @@
     <% end %>
   </div>
 </div>
+<console>
