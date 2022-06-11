@@ -9,18 +9,25 @@
 
   <div class="container" >
     <% @helpers.each do |helper| %>
-      <% if helper.availability == true %>
-        <div class= "cards_list">
-          <div class="row">
-            <h2>Hi! My name is <%=" #{helper.first_name}  #{helper.last_name}" %></h2>
-          </div>
-          <div class="row">
-            <p>About me: <%=" #{helper.description}" %> </p>
-            <p>distance 300 metres</p>
-          </div>
-          <div class="row">
-            <div class="column" align= "center">
-          <%= link_to "Connect", helper_path(helper), class: "btn btn-flat" %>
+
+          <% if helper.availability == true %>
+            <div class= "cards_list">
+               <% if helper.photo.attached? %>
+               <%= cl_image_tag(helper.photo.key, width: 400, height: 300, crop: :fill) %>
+               <% end %>
+              <div class="row">
+                <div class="column">
+                  Hi! I'm <%=" #{helper.first_name}  #{helper.last_name}"  %>
+                  <div class="row" >
+                    <span class="badge badge-secondary" style="text-align: left;">distance 300 metres</span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="column">
+                  <button type="button" class="btn btn-success mbot"><%=link_to "Connect ", helper_path(helper) %></button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
