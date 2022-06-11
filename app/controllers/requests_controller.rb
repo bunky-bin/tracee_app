@@ -1,5 +1,8 @@
 class RequestsController < ApplicationController
   before_action :set_helper, except: [:index]
+
+  # before_action :request_params
+
   before_action :last_request
 
   def index
