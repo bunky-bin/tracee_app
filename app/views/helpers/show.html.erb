@@ -1,6 +1,7 @@
 <h5> <%= link_to "live request",   helper_request_path(:commuter) %> </h5>
 
 <div id="login-container">
+<%= cl_image_tag(@helper.photo.key, width: 400, height: 300, crop: :fill) %>
   <div class="profile-img"></div>
     <div class ="helper_name">
       <h1><%=" #{@helper.first_name}  #{@helper.last_name}"  %> </h1>

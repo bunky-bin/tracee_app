@@ -11,6 +11,9 @@
     <% @helpers.each do |helper| %>
       <% if helper.availability == true %>
         <div class= "cards_list">
+        <% if helper.photo.attached? %>
+               <%= cl_image_tag(helper.photo.key, class: "avatar-large") %>
+               <% end %>
           <div class="row">
             <div class="column">
               <p>Hi! My name is <%=" #{helper.first_name}  #{helper.last_name} "  %></p>
