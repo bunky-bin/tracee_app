@@ -25,7 +25,7 @@ class RequestsController < ApplicationController
     @request.helper = helper
 
     if @request.save!
-    redirect_to helper_requests_path(helper)
+    redirect_to  livehelper_path(current_user)
     else
       render :new
     end

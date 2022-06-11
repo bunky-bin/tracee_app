@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :requests, only: [:show,:new, :create, :index]
   end
 
-  resources :requests, only: :show do
+  resources :livehelpers, only: :show do
     resources :chatrooms, only: :show do
       resources :messages, only: :create
     end
