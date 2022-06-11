@@ -6,7 +6,7 @@
       <h1><%=" #{@helper.first_name}  #{@helper.last_name}"  %> </h1>
     </div>
     <div class="description">
-      <p>Description goes here</p>
+     <%= "#{@helper.bio}" %>
     </div>
     <button> <h5> <%= link_to "Resuest #{ @helper.first_name} support", new_helper_request_path(@helper, @request) %> <h5></button>
     <button> <h5> <%= link_to "Back list of helpers", helpers_path %> <h5> </button>
