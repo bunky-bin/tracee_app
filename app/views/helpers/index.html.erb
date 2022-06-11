@@ -4,6 +4,9 @@
     <% @helpers.each do |helper| %>
           <% if helper.availability == true %>
             <div class= "cards_list">
+               <% if helper.photo.attached? %>
+               <%= cl_image_tag(helper.photo.key, width: 400, height: 300, crop: :fill) %>
+               <% end %>
               <div class="row">
                 <div class="column">
                   Hi! I'm <%=" #{helper.first_name}  #{helper.last_name}"  %>
