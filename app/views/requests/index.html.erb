@@ -7,6 +7,7 @@
       i going to meet <%= f.helper.first_name %>
       request has made at <%= f.accepted_time %>
 
+      <button> <h5> <%= link_to "add review", new_helper_review_path(f.id)  %> <h5> </button>
       </div>
     <% end%>
 

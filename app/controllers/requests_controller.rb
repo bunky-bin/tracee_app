@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
   before_action :set_helper, except: [:index]
-  before_action :request_params
+
   before_action :last_request
 
 
@@ -24,7 +24,7 @@ class RequestsController < ApplicationController
     @request.helper = helper
 
     if @request.save!
-      redirect_to helper_requests_path(helper)
+    redirect_to helper_requests_path(helper)
     else
       render :new
     end
@@ -40,8 +40,6 @@ class RequestsController < ApplicationController
 end
 
 private
-
-
 
 def set_helper
   @helper = User.find(params[:helper_id])
