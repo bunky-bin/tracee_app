@@ -3,7 +3,6 @@ class RequestsController < ApplicationController
   # before_action :request_params
   before_action :last_request
 
-
   def index
   # if params for helper true
 
@@ -40,8 +39,6 @@ class RequestsController < ApplicationController
 end
 
 private
-
-
 
 def set_helper
   @helper = User.find(params[:helper_id])

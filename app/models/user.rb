@@ -8,4 +8,8 @@ class User < ApplicationRecord
   has_many :requests, foreign_key: "commuter_id"
   has_many :reviews
   attr_reader :helper_id, :commuter_id
+
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
+
 end
