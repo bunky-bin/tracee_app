@@ -10,10 +10,19 @@
     </div>
     <button> <h5> <%= link_to "Resuest #{ @helper.first_name} support", new_helper_request_path(@helper, @request) %> <h5></button>
     <button> <h5> <%= link_to "Back list of helpers", helpers_path %> <h5> </button>
+
+
     <footer>
-      <div class="likes">
-        <p><i class='fa fa-heart'></i></p>
-        <p>1.5K</p>
+      <div class= "container">
+        <%if @reviews.present? %>
+          <div class= "row">
+          <% @reviews.each do |review| %>
+            <%= "#{review.description} " %>
+          <% end %>
+          </div>
+        <%end %>
       </div>
+
     </footer>
+  </div>
 </div>

@@ -12,9 +12,9 @@
         <div class= "cards_list">
           <div class="row">
             <div class="column">
-              <p>Hi! My name is <%=" #{helper.first_name}  #{helper.last_name}"  %></p>
+              <p>Hi! My name is <%=" #{helper.first_name}  #{helper.last_name} "  %></p>
                 <div class="row" >
-                <span class="badge badge-secondary" style="text-align: left;">distance 300 metres</span>
+                <span class="badge badge-secondary" style="text-align: left;"><%= "#{helper.location}" %></span>
                 </div>
             </div>
           </div>
@@ -29,3 +29,4 @@
     <% end %>
   </div>
 </div>
+<console>
