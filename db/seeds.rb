@@ -9,15 +9,15 @@
 
 # require "faker"
 
-# 50.times do
+# 25.times do
 #   User.create!(
 #     password: "password",
 #     first_name: Faker::Name.first_name,
 #     last_name: Faker::Name.last_name,
 #     email: Faker::Internet.email,
-#     location: Faker::Address.full_address,
-#     latitude: Faker::Address.latitude,
-#     longitude: Faker::Address.longitude,
+#     location:  " #{} #{address_array[0]} ",
+#     # latitude: Faker::Address.latitude,
+#     # longitude: Faker::Address.longitude,
 #     availability: true
 #   )
 # end
@@ -228,3 +228,92 @@ jackie_haruki.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/j
 jackie_haruki.save!
 puts "seeds created"
 
+file = URI.open('')
+# article = Article.new(title: 'NES', body: "A great console") sam-smith
+
+george_benson = User.new(
+  first_name: "George",
+  last_name: "Benson",
+  password: "123456",
+  email: "georgebenson@gmail.com",
+  bio: "Living the London life",
+  availability: false
+)
+george_benson.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+george_benson.save!
+puts "seeds created"
+
+file = URI.open('')
+# article = Article.new(title: 'NES', body: "A great console") sam-smith
+
+chris_reeves = User.new(
+  first_name: "Chris",
+  last_name: "Reeves",
+  password: "123456",
+  email: "chrisreeves@gmail.com",
+  bio: "Aim to be a hero everyday",
+  availability: false
+)
+chris_reeves.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+chris_reeves.save!
+puts "seeds created"
+
+file = URI.open('')
+# article = Article.new(title: 'NES', body: "A great console") sam-smith
+
+don_vito_corleone = User.new(
+  first_name: "DonVito",
+  last_name: "Corleone",
+  password: "123456",
+  email: "donvitocorleone@gmail.com",
+  bio: "Manage local family businesses",
+  availability: false
+)
+don_vito_corleone.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+don_vito_corleone.save!
+puts "seeds created"
+
+file = URI.open('')
+# article = Article.new(title: 'NES', body: "A great console") sam-smith
+
+diana_prince = User.new(
+  first_name: "Diana",
+  last_name: "Prince",
+  password: "123456",
+  email: "dianaprince@gmail.com",
+  bio: "If I am not in London I am in the Amazons",
+  availability: false
+)
+diana_prince.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+diana_prince.save!
+puts "seeds created"
+
+file = URI.open('')
+# article = Article.new(title: 'NES', body: "A great console") sam-smith
+
+kamala_khan = User.new(
+  first_name: "Kamala",
+  last_name: "Khan",
+  password: "123456",
+  email: "kamalkhan@gmail.com",
+  bio: "Originally from New Jersey USA, London is a marvelous city to live in",
+  availability: false
+)
+kamala_khan.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+kamala_khan.save!
+puts "seeds created"
+
+file = URI.open('')
+# article = Article.new(title: 'NES', body: "A great console") sam-smith
+
+gwen_stacey = User.new(
+  first_name: "Gwen",
+  last_name: "Stacey",
+  password: "123456",
+  email: "gwenstacey@gmail.com",
+  bio: "I am an arachnologist, spiders are often charismatic and intruiging, I am one of the few scientists in this field",
+  availability: false
+)
+gwen_stacey.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+gwen_stacey.save!
+puts "seeds created"
