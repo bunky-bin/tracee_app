@@ -1,3 +1,5 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
 <div class="container">
  <h1>Helpers near you</h1>
   <br>
@@ -6,32 +8,38 @@
     data-mapbox-markers-value="<%= @markers.to_json %>"
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-
-  <div class="container" >
-    <% @helpers.each do |helper| %>
-      <% if helper.availability == true %>
-        <div class= "cards_list">
-        <% if helper.photo.attached? %>
-               <%= cl_image_tag(helper.photo.key, class: "avatar-large") %>
-               <% end %>
-          <div class="row">
-            <div class="column">
-              <p>Hi! My name is <%=" #{helper.first_name}  #{helper.last_name} "  %></p>
-                <div class="row" >
-                <span class="badge badge-secondary" style="text-align: left;"><%= "#{helper.location}" %></span>
-                </div>
-              </div>
-              <div class="row">
-                <div class="column">
-                  <button type="button" class="btn btn-success mbot"><%=link_to "Connect ", helper_path(helper) %></button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% else %>
-      <% end %>
-    <% end %>
-  </div>
 </div>
-<console>
+<br>
+
+<% @helpers.each do |helper| %>
+<div class="container">
+  <% if helper.availability == true %>
+    <div class="row">
+        <div class="col-6">
+            <div class="card user-card">
+                <div class="card-block">
+                  <h6 class="f-w-600 m-t-25 m-b-10"><%=" #{helper.first_name}  #{helper.last_name} "  %></h6><br>
+                    <div class="user-image">
+                      <% if helper.photo.attached? %>
+                        <%= cl_image_tag(helper.photo.key, class: "avatar-large") %>
+                      <% end %>
+                    </div>
+                    <br>
+                    <p class="text-muted">Available to Help</p>
+                    <p class="text-muted">- Distance -</p>
+                    <hr>
+                    <p class="m-t-15 text-muted">Bio:<%=" #{helper.bio} "  %></p>
+                    <%=link_to "Connect ", helper_path(helper), class: "btn" %>
+                    <hr>
+                    <div class="row justify-content-center user-social-link">
+                        <div class="col-auto"><a href="#!"><i class="fa fa-facebook text-facebook"></i></a></div>
+                        <div class="col-auto"><a href="#!"><i class="fa fa-twitter text-twitter"></i></a></div>
+                        <div class="col-auto"><a href="#!"><i class="fa fa-dribbble text-dribbble"></i></a></div>
+                    </div>
+                </div>
+            </div>
+  <% end %>
+        </div>
+    </div>
+</div>
+<% end %>
