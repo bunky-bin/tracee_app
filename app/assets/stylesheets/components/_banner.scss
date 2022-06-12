@@ -1,8 +1,15 @@
-.banner {
-  background-size: cover;
-  background-position: center;
-  padding: 250px 10px;
-  width: 70em;
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@300&family=Roboto&display=swap');
+
+/* Style the video: 100% width and height to cover the entire window */
+#banner-video {
+  width: 99vw;
+  height: 85vh;
+  object-fit: cover;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -10,62 +17,33 @@
 }
 
 .banner-welcome {
-  background-color: rgba(255, 255, 255, 0.90);
-  border-radius: 3px;
-  padding: 10px;
-  width: 450px;
-  float: right;
-  text-align: center;
-  margin-right: 40px;
+  background: transparent;
+  padding: 20px;
+  top: -70vh;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
 
   h1 {
     margin: 0;
-    color: rgb(252,205,39);
+    font-family: 'Abril Fatface', cursive;
+    color: $yellow;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-    font-size: 40px;
+    font-size: 60px;
     font-weight: lighter;
-    font-family: 'Poppins', sans-serif;
     text-align: right;
     letter-spacing: 12px;
+    opacity: 0.8;
   }
 
-  h2 {
-    font-size: 20px;
-    color: rgb(2,0,71);
-    opacity: .7;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-    font-family: 'Roboto', sans-serif;
-    text-align: right;
-    letter-spacing: 4px;
-  }
-
-  h3 {
-    font-size: 16px;
-    color: rgb(2,0,71);
-    opacity: .7;
-    text-shadow: 1px rgba(0,0,0,0.2);
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    letter-spacing: 2px;
-    padding-left: 5px;
-  }
-
-  p {
-    font-size: 16px;
-    color: rgb(2,0,71);
-    opacity: .8;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-    font-family: 'Poppins', sans-serif;
-    text-align: justify;
-  }
   .btn {
-    padding: 8px 30px;
+    padding: 8px 16px;
+    width: 180px;
     background-color: #5964ff;
     border: none;
     color: white;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
   }
   .btn:hover {
@@ -73,15 +51,20 @@
   }
 }
 
-.more-info {
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 3px;
+.info-container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: auto auto;
+  background-color: white;
   padding: 10px;
-  width: 60em;
+}
+
+.more-info {
+  background-color: transparent;
+  border-radius: 3px;
+  padding: 50px;
+  font-size: 30px;
   text-align: center;
-  justify-content: space-around;
-  align-items: center;
-  padding-left: 150px;
 
   img {
     width: 300px;
@@ -128,7 +111,7 @@
     text-align: justify;
   }
   .btn {
-    padding: 8px 30px;
+    padding: 8px 20px;
     background-color: #5964ff;
     border: none;
     color: white;
@@ -139,5 +122,13 @@
   }
   .btn:hover {
     background-color: #4CAF50;
+  }
+}
+
+@media (max-width: 750px) {
+  #background-video { display: none; }
+  body {
+    background: url("https://assets.codepen.io/6093409/river.jpg") no-repeat;
+    background-size: cover;
   }
 }
