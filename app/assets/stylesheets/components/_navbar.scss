@@ -1,11 +1,14 @@
 .navbar-lewagon {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  background: transparent;
-  padding: 15px 0 0;
-  align-items: baseline;
+  background: white;
   width: 100%;
+  height: 100px;
+  position: absolute;
+  color: white;
+  top: 0;
+  bottom: 0;
+  padding-right: 50px;
+  padding-left: 30px;
+  z-index: 1100;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,11 +16,18 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 80px;
-
+  width: 110px;
 
 }
-.colorback{
-  color: rgb(214, 139, 48);
 
+.nav-link a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-item li {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
 }

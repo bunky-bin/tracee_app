@@ -1,28 +1,26 @@
-<h5> <%= link_to "live request",   helper_request_path(:commuter) %> </h5>
-
-<div id="login-container">
-  <div class="profile-img"></div>
-    <div class ="helper_name">
-      <h1><%=" #{@helper.first_name}  #{@helper.last_name}"  %> </h1>
-    </div>
-    <div class="description">
-     <%= "#{@helper.bio}" %>
-    </div>
-    <button> <h5> <%= link_to "Resuest #{ @helper.first_name} support", new_helper_request_path(@helper, @request) %> <h5></button>
-    <button> <h5> <%= link_to "Back list of helpers", helpers_path %> <h5> </button>
-
-
-    <footer>
-      <div class= "container">
+<div class="container" style="width: 400px" >
+  <center><%= cl_image_tag(@helper.photo.key, class: "img-show") %></center>
+    <br><br>
+  <h1><%=" #{@helper.first_name}  #{@helper.last_name}"  %> </h1> <br>
+    <h2>Bio: <%=" #{@helper.bio} "  %></h2> <br>
+    <div class= "review">
+      <h3>Reviews</h3>
         <%if @reviews.present? %>
-          <div class= "row">
           <% @reviews.each do |review| %>
-            <%= "#{review.description} " %>
+          <p>Rating: <%= "#{review.rating} " %> Stars <br>
+          Created: <%= "#{review.created_at} " %> <br>
+          Review: <%= "#{review.description} " %> <br>
+          </p>
+          <hr>
+          <br>
           <% end %>
-          </div>
-        <%end %>
-      </div>
+        <% else %>
+          <h3><%=" #{@helper.first_name}"  %> does not have any reviews yet.</h3><br>
+        <% end %>
+    </div>
+</div>
 
-    </footer>
-  </div>
+<div class= "container" align= "center">
+    <%=link_to "Request #{ @helper.first_name}'s  Support", new_helper_request_path(@helper, @request), class: "btn" %>
+    <%=link_to "Back to Helpers", helpers_path, class: "btn" %>
 </div>
