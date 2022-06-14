@@ -1,208 +1,198 @@
-
 # require "open-uri"
+file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1655234483/Seeds/seed14_plw7o9.jpg')
 
-# file = URI.open('https://t4.ftcdn.net/jpg/02/61/68/85/240_F_261688519_Dapj0DMehyGFRInEK3eGFzYBkZ5g27D6.jpg')
-# # article = Article.new(title: 'NES', body: "A great console") sam-smith
+sam_smith = User.new(
+  first_name: "Sam",
+  last_name: "Smith",
+  password: "123456",
+  email: "samsmith@gmail.com",
+  bio: "Music specialist. Reader. Hipster-friendly troublemaker. Incurable zombie expert. Freelance web fanatic.",
+  location: "59 St. John’s Road London N13 8DS",
+  availability: [true, false].sample
+)
+sam_smith.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+sam_smith.save!
 
+puts "user 1 created"
 
-# sam_smith = User.new(
-#   first_name: "Sam",
-#   last_name: "Smith",
-#   password: "123456",
-#   email: "samsmith@gmail.com",
-#   bio: "Love singing",
-#   availability: true
-# )
-# sam_smith.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-# sam_smith.save!
-# #     location: Faker::Address.full_address,
-# #     latitude: Faker::Address.latitude,
-# #     longitude: Faker::Address.longitude,
-# # TO BE ADDED AFTER GEOCODE ABSORBED INTO MASTER
-
-# file = URI.open('https://images.freeimages.com/images/large-previews/944/portrait-1623895.jpg')
-# # article = Article.new(title: 'NES', body: "A great console") sam-smith
-# #
-
-# alex_john = User.new(
-#   first_name: "Alex",
-#   last_name: "John",
-#   password: "123456",
-#   email: "alexjohn@gmail.com",
-#   bio: "Always out walking the dogs",
-#   availability: false
-# )
-# alex_john.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-# alex_john.save!
-
-# file = URI.open('https://images.freeimages.com/images/large-previews/f3f/portrait-1438907.jpg')
-# # article = Article.new(title: 'NES', body: "A great console") sam-smith
-# #
-
-# charlie_pink = User.new(
-#   first_name: "Charlie",
-#   last_name: "Pink",
-#   password: "123456",
-#   email: "charliepink@gmail.com",
-#   bio: "work in the local coffee shop",
-#   availability: false
-# )
-# charlie_pink.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-# charlie_pink.save!
-
-# file = URI.open('https://pixy.org/src/11/thumbs350/118458.jpg')
-# # article = Article.new(title: 'NES', body: "A great console") sam-smith
-# #
-
-# rory_north = User.new(
-#   first_name: "Rory",
-#   last_name: "North",
-#   password: "123456",
-#   email: "rorynorth@gmail.com",
-#   bio: "Local cabbie 24/7",
-#   availability: true
-# )
-# rory_north.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-# rory_north.save!
-
-# file = URI.open('https://i.huffpost.com/gen/1364522/thumbs/o-MICHAEL-PHARAOH-900.jpg?6')
-# # article = Article.new(title: 'NES', body: "A great console") sam-smith
-# #
-
-# morgan_gray = User.new(
-#   first_name: "Morgan",
-#   last_name: "Gray",
-#   password: "123456",
-#   email: "morgangray@gmail.com",
-#   bio: "Lived in this neighbourhood all my life I know everyone!",
-#   availability: false
-# )
-# morgan_gray.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-# morgan_gray.save!
-
-# file = URI.open('https://jooinn.com/images/a-beautiful-young-business-woman-14.jpg')
-# # article = Article.new(title: 'NES', body: "A great console") sam-smith
-# #
-
-# quinn_lee = User.new(
-#   first_name: "Quinn",
-#   last_name: "Lee",
-#   password: "123456",
-#   email: "quinnlee@gmail.com",
-#   bio: "Baking cakes or out walking",
-#   availability: false
-# )
-# quinn_lee.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-# quinn_lee.save!
-
-# file = URI.open('https://live.staticflickr.com/5204/5248278252_7bed0d3ebe_b.jpg')
-# # article = Article.new(title: 'NES', body: "A great console") sam-smith
-# #
-
-# robin_bird = User.new(
-#   first_name: "Robin",
-#   last_name: "Bird",
-#   password: "123456",
-#   email: "robinbird@gmail.com",
-#   bio: "Knitting or bird watching otherwise out walking",
-#   availability: false
-# )
-# robin_bird.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-# robin_bird.save!
-
-# file = URI.open('https://i.pinimg.com/originals/44/f6/22/44f622710b29893e0a310608443560da.jpg')
-# # article = Article.new(title: 'NES', body: "A great console") sam-smith
-
-# rowann_bush = User.new(
-#   first_name: "Rowann",
-#   last_name: "Bush",
-#   password: "123456",
-#   email: "rowannbush@gmail.com",
-#   bio: "Run my own business from home making Xmas decorations",
-#   availability: true
-# )
-# rowann_bush.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-# rowann_bush.save!
-
-# file = URI.open('https://live.staticflickr.com/3800/10923845106_6192539e42_z.jpg')
-# # article = Article.new(title: 'NES', body: "A great console") sam-smith
+file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1655233571/Seeds/seed11_f98ock.jpg')
 
 
-# kelly_britton = User.new(
-#   first_name: "Kelly",
-#   last_name: "Britton",
-#   password: "123456",
-#   email: "kellybritton@gmail.com",
-#   bio: "Retired local copper I miss the beat, so always out on a stroll",
-#   availability: true
-# )
-# kelly_britton.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-# kelly_britton.save!
+alex_john = User.new(
+  first_name: "Alex",
+  last_name: "John",
+  password: "123456",
+  email: "alexjohn@gmail.com",
+  bio: "Explorer. Tvaholic. Friend of animals everywhere. Alcohol expert. Writer. Coffee nerd. Entrepreneur.",
+  location: "54 Park Road London E30 2DB",
+  availability: [true, false].sample
+)
+alex_john.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+alex_john.save!
 
-# file = URI.open('https://digital-photography-school.com/wp-content/uploads/2008/07/portrait-background.jpg')
-# # article = Article.new(title: 'NES', body: "A great console") sam-smith
+puts "user 2 created"
 
+file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1655234483/Seeds/seed16_msbyhf.jpg')
 
-# cleo_smart = User.new(
-#   first_name: "Cleo",
-#   last_name: "Smart",
-#   password: "123456",
-#   email: "cleosmart@gmail.com",
-#   bio: "Retired maths teacher",
-#   availability: true
-# )
-# cleo_smart.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-# cleo_smart.save!
+charlie_pink = User.new(
+  first_name: "Charlie",
+  last_name: "Pink",
+  password: "123456",
+  email: "charliepink@gmail.com",
+  bio: "Work in the local coffee shop",
+  location: "45 George Street London E16 5GU",
+  availability: [true, false].sample
+)
+charlie_pink.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+charlie_pink.save!
 
-# file = URI.open('https://live.staticflickr.com/7505/16155321812_98d2a992f8_b.jpg')
-# # article = Article.new(title: 'NES', body: "A great console") sam-smith
+puts "user 3 created"
 
+file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1655234482/Seeds/seed15_lvbcbm.jpg')
 
-# jessie_johnson = User.new(
-#   first_name: "Jessie",
-#   last_name: "Johnson",
-#   password: "123456",
-#   email: "jessiejohnson@gmail.com",
-#   bio: "Brought up ten children, and lucky to have twenty five grandchildren",
-#   availability: true
-# )
-# jessie_johnson.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-# jessie_johnson.save!
+rory_north = User.new(
+  first_name: "Rory",
+  last_name: "North",
+  password: "123456",
+  email: "rorynorth@gmail.com",
+  bio: "Local cabbie 24/7",
+  location: "10 Whiston Rd, London E2 8FX",
+  availability: [true, false].sample
+)
+rory_north.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+rory_north.save!
 
-# file = URI.open('https://live.staticflickr.com/7454/13876667675_ab398a1c8e.jpg')
-# # article = Article.new(title: 'NES', body: "A great console") sam-smith
+puts "user 4 created"
 
+file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1655234482/Seeds/seed13_gzhloj.jpg')
 
-# jackie_haruki = User.new(
-#   first_name: "Jackie",
-#   last_name: "Haruki",
-#   password: "123456",
-#   email: "jackieharuki@gmail.com",
-#   bio: "Own the local sushi bar",
-#   availability: false
-# )
-# jackie_haruki.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-# jackie_haruki.save!
-# puts "seeds created"
+morgan_gray = User.new(
+  first_name: "Morgan",
+  last_name: "Gray",
+  password: "123456",
+  email: "morgangray@gmail.com",
+  bio: "Lived in this neighbourhood all my life, I know everyone!",
+  location: "59 Virginia Rd, London E2 7NF",
+  availability: [true, false].sample
+)
+morgan_gray.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+morgan_gray.save!
 
-file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1653769179/tracee_yz3nzo.png')
-# article = Article.new(title: 'NES', body: "A great console") sam-smith
+puts "user 5 created"
+
+file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1655233570/Seeds/seed10_ofqogz.jpg')
+
+quinn_lee = User.new(
+  first_name: "Quinn",
+  last_name: "Lee",
+  password: "123456",
+  email: "quinnlee@gmail.com",
+  bio: "Travel practitioner. Music maven. Professional problem solver. Web fanatic. Communicator. Twitter lover. Proud coffee specialist.",
+  location: "2 Purcell St, London N1 6RD",
+  availability: [true, false].sample
+)
+quinn_lee.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+quinn_lee.save!
+
+puts "user 6 created"
+
+file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1655233569/Seeds/seed1_hc6ftn.jpg')
+
+robin_bird = User.new(
+  first_name: "Robin",
+  last_name: "Bird",
+  password: "123456",
+  email: "robinbird@gmail.com",
+  bio: "Knitting or bird watching otherwise out walking",
+  location: "18 Victoria Park Square, Bethnal Green, London E2 9PF",
+  availability: [true, false].sample
+)
+robin_bird.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+robin_bird.save!
+
+puts "user 7 created"
+
+file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1655233569/Seeds/seed3_kdqt3i.jpg')
+
+kelly_britton = User.new(
+  first_name: "Kelly",
+  last_name: "Britton",
+  password: "123456",
+  email: "kellybritton@gmail.com",
+  bio: "Retired local copper I miss the beat, so always out on a stroll",
+  location: "32 Cowper St, London EC2A 4AP",
+  availability: [true, false].sample
+)
+kelly_britton.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+kelly_britton.save!
+
+puts "user 8 created"
+
+file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1655233569/Seeds/seed6_zj7bx5.jpg')
+
+cleo_smart = User.new(
+  first_name: "Cleo",
+  last_name: "Smart",
+  password: "123456",
+  email: "cleosmart@gmail.com",
+  bio: "Retired maths teacher",
+  location: "16 New St, London EC2M 4TR",
+  availability: [true, false].sample
+)
+cleo_smart.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+cleo_smart.save!
+
+puts "user 9 created"
+
+file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1655233569/Seeds/seed4_uaimkh.jpg')
+
+jessie_johnson = User.new(
+  first_name: "Jessie",
+  last_name: "Johnson",
+  password: "123456",
+  email: "jessiejohnson@gmail.com",
+  bio: "Brought up ten children, and lucky to have twenty five grandchildren",
+  location: "336 Acton Mews, London E8 4EA",
+  availability: [true, false].sample
+)
+jessie_johnson.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+jessie_johnson.save!
+
+puts "user 10 created"
+
+file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1655233569/Seeds/seed5_xb4e2h.jpg')
+
+jackie_haruki = User.new(
+  first_name: "Jackie",
+  last_name: "Haruki",
+  password: "123456",
+  email: "jackieharuki@gmail.com",
+  bio: "Own the local sushi bar. Extreme beer ninja. Unapologetic music nerd. Introvert. Problem solver. Hardcore pop culture maven.",
+  location: "135 Cannon Street Road, London E1 2LX",
+  availability: [true, false].sample
+)
+jackie_haruki.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+jackie_haruki.save!
+
+puts "user 11 created"
+
+file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1655233570/Seeds/seed7_z3kwbh.jpg')
 
 george_benson = User.new(
   first_name: "George",
   last_name: "Benson",
   password: "123456",
   email: "georgebenson@gmail.com",
-  bio: "Living the London life",
+  bio: "Living the London life. Zombie trailblazer. Unapologetic tv fanatic. Music practitioner. Lifelong twitter fan. Professional social media geek.",
   location: "603 Harrow Road, Wembley HA0 2HH",
-  availability: true
+  availability: [true, false].sample
 )
 george_benson.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 george_benson.save!
-puts "seeds created"
 
-file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1653769179/tracee_yz3nzo.png')
-# article = Article.new(title: 'NES', body: "A great console") sam-smith
+puts "user 12 created"
+
+file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1655233570/Seeds/seed8_jmb7c8.jpg')
 
 chris_reeves = User.new(
   first_name: "Chris",
@@ -211,14 +201,14 @@ chris_reeves = User.new(
   email: "chrisreeves@gmail.com",
   bio: "Aim to be a hero everyday",
   location: "1 Lupus street, Pimlico, London SW1V 3EY",
-  availability: true
+  availability: [true, false].sample
 )
 chris_reeves.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 chris_reeves.save!
-puts "seeds created"
 
-file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1653769179/tracee_yz3nzo.png')
-# article = Article.new(title: 'NES', body: "A great console") sam-smith
+puts "user 13 created"
+
+file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1655233569/Seeds/seed5_xb4e2h.jpg')
 
 don_vito_corleone = User.new(
   first_name: "DonVito",
@@ -227,30 +217,30 @@ don_vito_corleone = User.new(
   email: "donvitocorleone@gmail.com",
   bio: "Manage local family businesses",
   location: "4 Back Hill, London EC1R 5EN",
-  availability: true
+  availability: [true, false].sample
 )
 don_vito_corleone.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 don_vito_corleone.save!
-puts "seeds created"
 
-file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1653769179/tracee_yz3nzo.png')
-# article = Article.new(title: 'NES', body: "A great console") sam-smith
+puts "user 14 created"
+
+file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1655233569/Seeds/seed2_bkldju.jpg')
 
 diana_prince = User.new(
   first_name: "Diana",
   last_name: "Prince",
   password: "123456",
   email: "dianaprince@gmail.com",
-  bio: "If I am not in London I am in the Amazons",
+  bio: "If I am not in London, I am in the Amazons",
   location: "1 Coram Street, London WC1N 1HE",
-  availability: true
+  availability: [true, false].sample
 )
 diana_prince.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 diana_prince.save!
-puts "seeds created"
 
-file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1653769179/tracee_yz3nzo.png')
-# article = Article.new(title: 'NES', body: "A great console") sam-smith
+puts "user 15 created"
+
+file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1655233569/Seeds/seed3_kdqt3i.jpg')
 
 kamala_khan = User.new(
   first_name: "Kamala",
@@ -259,24 +249,27 @@ kamala_khan = User.new(
   email: "kamalkhan@gmail.com",
   bio: "Originally from New Jersey USA, London is a marvelous city to live in",
   location: "135 Cannon Street Road, London E1 2LX",
-  availability: false
+  availability: [true, false].sample
 )
 kamala_khan.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 kamala_khan.save!
-puts "seeds created"
 
-file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1653769179/tracee_yz3nzo.png')
-# article = Article.new(title: 'NES', body: "A great console") sam-smith
+puts "user 16 created"
+
+file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1655233569/Seeds/seed6_zj7bx5.jpg')
 
 gwen_stacey = User.new(
   first_name: "Gwen",
   last_name: "Stacey",
   password: "123456",
   email: "gwenstacey@gmail.com",
-  bio: "I am an arachnologist, spiders are often charismatic and intruiging, I am one of the few scientists in this field",
+  bio: "I am an arachnologist, spiders are often charismatic and intruiging, I am one of the few scientists in this field.",
   location: "2 Keppel Street, London WC1E 7HT",
-  availability: false
+  availability: [true, false].sample
 )
 gwen_stacey.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 gwen_stacey.save!
+
 puts "seeds created"
+
+
