@@ -1,9 +1,8 @@
 class RequestsController < ApplicationController
   before_action :set_helper, except: [:index]
-
-  # before_action :request_params
-
   before_action :last_request
+
+  attr_reader :helper
 
   def index
   # if params for helper true
@@ -18,14 +17,14 @@ class RequestsController < ApplicationController
 
   def create
 
-    helper = User.find(params[:helper_id])
+    @helper = User.find(params[:helper_id])
     @request = Request.new
     @request.location = helper.location
     @request.commuter = current_user
-    @request.helper = helper
+    @request.helper = @helper
 
     if @request.save!
-    redirect_to  livehelper_path(current_user)
+    redirect_to  livehelper_path(@helper)
     else
       render :new
     end
