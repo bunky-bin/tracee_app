@@ -270,4 +270,6 @@ gwen_stacey = User.new(
 gwen_stacey.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 gwen_stacey.save!
 
-puts "user 17 created"
+puts "seeds created"
+
+
