@@ -1,2 +1,3 @@
 class Livehelper < ApplicationRecord
+  
 end

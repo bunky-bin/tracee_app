@@ -1,203 +1,33 @@
-<!DOCTYPE html>
-<head>
-<meta charset='utf-8' />
-  <title>Getting started with the Mapbox Directions API</title>
-  <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js'></script>
-  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />
-  <style>
-    #map {
-      position: ;
-      top: 0;
-      bottom: 0;
-      width: 300px;
-      height: 300px;
-    }
-  </style>
-</head>
+  <div class="container" width="300px">
+        <div class="row justify-content-center" style="margin: 24px;">
+          <h2 style = "text-align: center">Confirm Request</h2>
+            <div class="col-6">
 
-<body>
-<div class="container" width="300px">
-  <div class="row justify-content-center" style="margin: 24px;">
-    <h1 style = "text-align: center;">New Booking</h1>
-      <div class="col-6">
-      <%=  simple_form_for(Request.new, :url => { :action => "create" }) do |f|%>
+              <div class="container" style="width: 400px" >
+                <center><%= cl_image_tag(@helper.photo.key, class: "img-show") %></center>
+                  <br><br>
+                <h1><%=" #{@helper.first_name}  #{@helper.last_name}"  %> </h1><br>
+                  <h2>Bio: <%=" #{@helper.bio} "  %></h2><br>
 
-       <%= f.text_field :helper_id,  type: "hidden" %>
-       <%= f.text_field :commuter_id,  type: "hidden"  %>
-       <%= f.text_field :location,  type: "hidden"  %>
-        <div class="row justify-content-center">
-          <%= f.submit class: 'btn-primary' %>
+              </div>
+
+              <br>
+              <br>
+              <div class="row">
+                <%=  simple_form_for(Request.new, :url => { :action => "create" }) do |f|%>
+                <%= f.text_field :helper_id,  type: "hidden" %>
+                <%= f.text_field :commuter_id,  type: "hidden"  %>
+                <%= f.text_field :location,  type: "hidden"  %>
+                  <div class="row justify-content-center">
+                    <%= f.submit class: 'btn-primary' %>
+                  </div>
+                <% end %>
+                  <br>
+                  <br>
+              </div>
+              <div class="row ">
+                <%=link_to "Back to Helpers", helpers_path,  text-align-last: end; %>
+              </div>
+            </div>
         </div>
-      <% end %>
-    </div>
   </div>
-</div>
-
-<div id="map"
-  data-controller="mapbox"
-  data-mapbox-markers-value="<%= @helper.location %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    <div id="instructions"></div>
-</div>
-
-<script>
-  mapboxgl.accessToken = 'pk.eyJ1IjoiYnVua3lib3kiLCJhIjoiY2wxcGE4bDU1MDhmYjNqb2E4aXZkam1yYSJ9.NWMx3RbJSU5N_T83-T5i8A';
-  const map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11',
-    center: [-0.076225, 51.5307], // starting position
-    zoom: 12
-  });
-
-  // set the bounds of the map
-
-  const bounds = [
-    [-123.069003, 45.395273],
-    [-122.303707, 45.612333]
-  ];
-  map.setMaxBounds(bounds);
-
-  // an arbitrary start will always be the same
-  // only the end or destination will change
-
-  const start = [-0.076225, 51.5307];
-
-  // create a function to make a directions request
-  async function getRoute(end) {
-  // make a directions request using cycling profile
-  // an arbitrary start will always be the same
-  // only the end or destination will change
-  const query = await fetch(
-  `https://api.mapbox.com/directions/v5/mapbox/cycling/${start[0]},${start[1]};${end[0]},${end[1]}?steps=true&geometries=geojson&access_token=${mapboxgl.accessToken}`,
-      { method: 'GET' }
-    );
-    const json = await query.json();
-    const data = json.routes[0];
-    const route = data.geometry.coordinates;
-    const geojson = {
-      type: 'Feature',
-      properties: {},
-      geometry: {
-        type: 'LineString',
-        coordinates: route
-      }
-    };
-  // if the route already exists on the map, we'll reset it using setData
-    if (map.getSource('route')) {
-      map.getSource('route').setData(geojson);
-    }
-  // otherwise, we'll make a new request
-    else {
-      map.addLayer({
-        id: 'route',
-        type: 'line',
-        source: {
-          type: 'geojson',
-          data: geojson
-        },
-        layout: {
-          'line-join': 'round',
-          'line-cap': 'round'
-        },
-        paint: {
-          'line-color': '#3887be',
-          'line-width': 5,
-          'line-opacity': 0.75
-        }
-      });
-    }
-  // turn instructions //
-  const instructions = document.getElementById('instructions');
-  const steps = data.legs[0].steps;
-
-  let tripInstructions = '';
-  for (const step of steps) {
-    tripInstructions += `<li>${step.maneuver.instruction}</li>`;
-  }
-  instructions.innerHTML = `<p><strong>Trip duration: ${Math.floor(
-    data.duration / 60
-  )} min 🚴 </strong></p><ol>${tripInstructions}</ol>`;
-}
-
-map.on('load', () => {
-  // make an initial directions request that
-  // starts and ends at the same location
-  getRoute(start);
-
-  // Add starting point to the map
-  map.addLayer({
-    id: 'point',
-    type: 'circle',
-    source: {
-      type: 'geojson',
-      data: {
-        type: 'FeatureCollection',
-        features: [
-          {
-            type: 'Feature',
-            properties: {},
-            geometry: {
-              type: 'Point',
-              coordinates: start
-            }
-          }
-        ]
-      }
-    },
-    paint: {
-      'circle-radius': 10,
-      'circle-color': '#3887be'
-    }
-  });
-  // this is where the code from the next step will go
-  map.on('click', (event) => {
-    const coords = Object.keys(event.lngLat).map((key) => event.lngLat[key]);
-    const end = {
-      type: 'FeatureCollection',
-      features: [
-        {
-          type: 'Feature',
-          properties: {},
-          geometry: {
-            type: 'Point',
-            coordinates: coords
-          }
-        }
-      ]
-    };
-    if (map.getLayer('end')) {
-      map.getSource('end').setData(end);
-    } else {
-      map.addLayer({
-        id: 'end',
-        type: 'circle',
-        source: {
-          type: 'geojson',
-          data: {
-            type: 'FeatureCollection',
-            features: [
-              {
-                type: 'Feature',
-                properties: {},
-                geometry: {
-                  type: 'Point',
-                  coordinates: coords
-                }
-              }
-            ]
-          }
-        },
-        paint: {
-          'circle-radius': 10,
-          'circle-color': '#f30'
-        }
-      });
-    }
-  getRoute(coords);
-});
-
-</script>
-
-</body>
-</html>
