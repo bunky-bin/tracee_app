@@ -1,6 +1,8 @@
 import { Controller } from "@hotwired/stimulus"
 import mapboxgl from "mapbox-gl"
-import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
+//import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
+//import MapboxDirections from "@mapbox/mapbox-gl-directions"
+
 
 export default class extends Controller {
   static values = {
@@ -17,6 +19,9 @@ export default class extends Controller {
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
     this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }))
+    this.map.addControl(new MapboxDirections({accessToken: mapboxgl.accessToken}),'top-left')
+
+    ;
   }
 
   #addMarkersToMap() {
