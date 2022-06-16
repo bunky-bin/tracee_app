@@ -15,7 +15,7 @@
         </div>
         My request with <%= f.helper.first_name %> is at <%= f.location%>.
         <% s = f.created_at %>
-        This request made on <%= s.strftime('%d-%m-%Y') %>.
+        This request was made on <%= s.strftime('%d-%m-%Y') %>.
         <br>
         <br>
         <%= link_to "add review", new_helper_review_path(f.id), class: "link"%>
