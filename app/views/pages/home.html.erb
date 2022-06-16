@@ -1,6 +1,8 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
 <!-- The video -->
@@ -25,24 +27,34 @@
     </div>
   <% end %>
 </div>
+<%# <div class="center"> %>
 <div class="info-container">
+<div class="center">
   <div class="more-info">
     <img src="https://res.cloudinary.com/bunkyboy/image/upload/v1654206603/Bye-cuate_vonuvq.png" alt="lonely">
-    <h3>Our Mission</h3><br>
-    <p>Get that feel good factor helping others, or connect with helpers to feel safe on your travels. Become part of the Tracee community!  </p>
+    <h3><strong>Our Mission,<strong></h3><br>
+    <h3>Get that feel good factor helping others, or connect with helpers to feel safe on your travels. </h3>
+    <h3>Become part of the Tracee community!  </h3>
   </div>
   <div class="more-info">
     <img src="https://res.cloudinary.com/bunkyboy/image/upload/v1654206591/Walking_around-cuate_bckdoz.png" alt="lonely">
-    <h3>How It Works</h3><br>
-      <p>As a helper or a commuter: 1. connect to people nearby. 2. store family and friends in an easy access contact list. 3. quick links to pre-programmed emergency numbers. </p>
+    <h3><strong>How It Works</strong></h3><br>
+    <div class="center">
+      <h3>As a helper or a commuter: </h3>
+      <h3>1. connect to people nearby. </h3>
+      <h3>2. store family and friends in an easy access contact list. </h3>
+      <h3>3. quick links to pre-programmed emergency numbers. </h3>
+  </div>
   </div>
   <div class="more-info">
     <img src="https://res.cloudinary.com/bunkyboy/image/upload/v1654206602/3936748_h0ebk1.jpg" alt="lonely">
-    <h3>Leave a Review</h3><br>
-      <p> A review is appreciated, share your experiences with the tracee community.</p>
+    <h3><strong>Leave a Review</strong></h3><br>
+    <div class="center">
+      <h3> A review is appreciated, share your experiences with the tracee community.</h3>
+    </div>
   </div>
 </div>
-
+</div>
 <!-- javascript -->
 <script>
 var video = document.getElementById("banner-video");
@@ -60,5 +72,19 @@ function myFunction() {
 document.querySelector('video').playbackRate = 0.4;
 </script>
 
+<%# <div class= "container" align= "center">
+<div id='map' style='width: 1000px; height: 300px; center;'></div>
+</div>
+<script>
+
+mapboxgl.accessToken = 'pk.eyJ1IjoidGxhLXZlbGxlIiwiYSI6ImNsMXBkMDdueDBiaGwzb211Z2FlNXVueWwifQ.OOXcEebwEtmLujTGMFyTeg';
+const map = new mapboxgl.Map({
+container: 'map', // container ID
+style: 'mapbox://styles/mapbox/streets-v11', // style URL
+center: [-74.5, 40], // starting position [lng, lat]
+zoom: 9 // starting zoom
+});
+</script>
+
 </body>
-</html>
+</html> %>

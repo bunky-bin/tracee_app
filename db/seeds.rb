@@ -23,7 +23,7 @@ alex_john = User.new(
   last_name: "John",
   password: "123456",
   email: "alexjohn@gmail.com",
-  bio: "Explorer. Tvaholic. Friend of animals everywhere. Alcohol expert. Writer. Coffee nerd. Entrepreneur.",
+  bio: "Explorer. Travelholic. Friend of animals everywhere. Alcohol expert. Writer. Coffee nerd. Entrepreneur.",
   location: "54 Park Road London E30 2DB",
   availability: [true, false].sample
 )
@@ -151,7 +151,7 @@ jessie_johnson = User.new(
   last_name: "Johnson",
   password: "123456",
   email: "jessiejohnson@gmail.com",
-  bio: "Brought up ten children, and lucky to have twenty five grandchildren",
+  bio: "Brought up ten children, and lucky to have twenty five amazing grandchildren",
   location: "336 Acton Mews, London E8 4EA",
   availability: [true, false].sample
 )

@@ -7,7 +7,7 @@
   <div style="width: 100%; height: 350px;"
     data-controller="mapbox"
     data-mapbox-markers-value="<%= @markers.to_json %>"
-    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    data-mapbox-api-key-value="<%= ENV['pk.eyJ1IjoidGxhLXZlbGxlIiwiYSI6ImNsMXBkMDdueDBiaGwzb211Z2FlNXVueWwifQ.OOXcEebwEtmLujTGMFyTeg'] %>">
   </div>
 </div>
 <br>
@@ -45,3 +45,22 @@
     </div>
 </div>
 <% end %>
+
+<div class= "container" align= "center">
+  <div id='map' style='width: 1000px; height: 300px; center;'></div>
+</div>
+<script>
+
+// I believe this needs to go here but its not linked to the correct page/path
+// mapboxgl.accessToken = 'pk.eyJ1IjoidGxhLXZlbGxlIiwiYSI6ImNsMXBkMDdueDBiaGwzb211Z2FlNXVueWwifQ.OOXcEebwEtmLujTGMFyTeg';
+// const map = new mapboxgl.Map({
+// container: 'map', // container ID
+// style: 'mapbox://styles/mapbox/streets-v11', // style URL
+// center: [-74.5, 40], // starting position [lng, lat]
+// zoom: 9 // starting zoom
+// });
+
+// </script>
+
+// </body>
+// </html>
