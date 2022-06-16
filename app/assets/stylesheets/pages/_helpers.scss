@@ -5,6 +5,18 @@ body{
   background: white;
 }
 
+.user-container {
+  display: grid;
+  grid-template-columns: 350px 350px;
+  grid-template-rows: auto auto;
+  column-gap: 10px;
+  row-gap: 15px;
+  margin: auto;
+  justify-items: center;
+  align-content: center;
+  justify-content: space-evenly;
+}
+
 .card.user-card {
   background: "";
   border-top: none;
@@ -15,7 +27,6 @@ body{
 }
 
 .card {
-  display: grid;
   border-radius: 5px;
   -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
   box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);

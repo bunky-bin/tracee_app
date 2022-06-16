@@ -128,7 +128,7 @@ kelly_britton.save!
 
 puts "user 8 created"
 
-file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1655233569/Seeds/seed6_zj7bx5.jpg')
+file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1655234484/Seeds/seed12_ypaedq.jpg')
 
 cleo_smart = User.new(
   first_name: "Cleo",
@@ -144,7 +144,7 @@ cleo_smart.save!
 
 puts "user 9 created"
 
-file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1655233569/Seeds/seed4_uaimkh.jpg')
+file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1655233570/Seeds/seed9_bkyn7b.jpg')
 
 jessie_johnson = User.new(
   first_name: "Jessie",
@@ -271,5 +271,3 @@ gwen_stacey.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png
 gwen_stacey.save!
 
 puts "seeds created"
-
-
