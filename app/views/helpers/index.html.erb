@@ -16,8 +16,9 @@
 <% @helpers.each do |helper| %>
 <div class="container" align="center">
   <% if helper.availability == true %>
+  <div class="container" align="center">
     <div class="row">
-        <div class="col-sm-4">
+        <div class="">
             <div class="card user-card">
                 <div class="card-block">
                   <h6 class="f-w-600 m-t-25 m-b-10"><%=" #{helper.first_name}  #{helper.last_name} "  %></h6><br>
@@ -40,11 +41,12 @@
                     </div>
                 </div>
             </div>
-  <% end %>
         </div>
     </div>
+  </div>
+  <% end %>
+  <% end %>
 </div>
+
 <% end %>
-
-
 

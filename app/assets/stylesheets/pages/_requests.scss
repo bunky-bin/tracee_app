@@ -49,3 +49,24 @@ p {
   border-radius: 5px;
   box-shadow: 3px;
 }
+
+.btn {
+  padding: 8px 30px;
+  width: 200px;
+  background-color: #5964ff;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.btn:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: $purple;
+}

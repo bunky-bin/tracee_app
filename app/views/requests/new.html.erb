@@ -1,25 +1,22 @@
   <div class="container" width="300px">
         <div class="row justify-content-center" style="margin: 24px;">
           <h2 style = "text-align: center">Confirm Request</h2>
+          <br><br>
             <div class="col-6">
-
               <div class="container" style="width: 400px" >
                 <center><%= cl_image_tag(@helper.photo.key, class: "img-show") %></center>
                   <br><br>
                 <h1><%=" #{@helper.first_name}  #{@helper.last_name}"  %> </h1><br>
-                  <h2>Bio: <%=" #{@helper.bio} "  %></h2><br>
+                  <h3>Bio: <%=" #{@helper.bio} "  %></h3><br>
 
               </div>
-
-              <br>
-              <br>
               <div class="row">
                 <%=  simple_form_for(Request.new, :url => { :action => "create" }) do |f|%>
                 <%= f.text_field :helper_id,  type: "hidden" %>
                 <%= f.text_field :commuter_id,  type: "hidden"  %>
                 <%= f.text_field :location,  type: "hidden"  %>
                   <div class="row justify-content-center">
-                    <%= f.submit class: 'btn-primary' %>
+                    <%= f.submit class: 'btn' %>
                   </div>
                 <% end %>
                   <br>
