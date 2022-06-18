@@ -12,8 +12,9 @@
 </div>
 <br>
 
-<div class="user-container">
-  <% @helpers.each do |helper| %>
+<%= console %>
+<% @helpers.each do |helper| %>
+<div class="container" align="center">
   <% if helper.availability == true %>
   <div class="container" align="center">
     <div class="row">
@@ -46,3 +47,6 @@
   <% end %>
   <% end %>
 </div>
+
+<% end %>
+
