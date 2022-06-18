@@ -13,3 +13,8 @@ module MetaTagsHelper
     meta_image.starts_with?("http") ? meta_image : image_url(meta_image)
   end
 end
+
+# helpers that will encapsulate the following logic for our 3 keys
+#  :meta_title, :meta_description and :meta_image:
+
+# In any view, if a content_for(:meta_key) was defined, it should override DEFAULT_META's value.
