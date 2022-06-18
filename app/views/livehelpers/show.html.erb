@@ -1,8 +1,8 @@
 
-<head>
+<%# <head>
 
   <meta charset='utf-8' />
-    <title>Getting started with the Mapbox Directions API</title>
+    <title>Get there safe with Tracee</title>
     <meta name='viewport' content='width=device-width, initial-scale=1' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />
@@ -16,9 +16,9 @@
       }
     </style>
 
-</head>
+</head> %>
 
-<body>
+<%# <body> %>
 
   <div class= "container">
     <div class="column" width="300px">
@@ -204,21 +204,21 @@
           </script>
     </div>
   </div>
-  <div class= "container" align= "center">
+  <%# <div class= "container" align= "center">
 <div id='map' style='width: 1000px; height: 300px; center;'></div>
-</div>
+</div> %>
 
 
 <script>
 
-mapboxgl.accessToken = 'pk.eyJ1IjoidGxhLXZlbGxlIiwiYSI6ImNsMXBkMDdueDBiaGwzb211Z2FlNXVueWwifQ.OOXcEebwEtmLujTGMFyTeg';
-const map = new mapboxgl.Map({
-container: 'map', // container ID
-style: 'mapbox://styles/mapbox/streets-v11', // style URL
-center: [-74.5, 40], // starting position [lng, lat]
-zoom: 9 // starting zoom
-});
+// mapboxgl.accessToken = 'pk.eyJ1IjoidGxhLXZlbGxlIiwiYSI6ImNsMXBkMDdueDBiaGwzb211Z2FlNXVueWwifQ.OOXcEebwEtmLujTGMFyTeg';
+// const map = new mapboxgl.Map({
+// container: 'map', // container ID
+// style: 'mapbox://styles/mapbox/streets-v11', // style URL
+// center: [-74.5, 40], // starting position [lng, lat]
+// zoom: 9 // starting zoom
+// });
 </script>
 
-</body>
+<%# </body> %>
 </html>
