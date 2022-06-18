@@ -5,26 +5,26 @@
 <div class="container" style="width: 400px" >
   <center><%= cl_image_tag(@helper.photo.key, class: "img-show") %></center>
     <br><br>
-  <h1><%=" #{@helper.first_name}  #{@helper.last_name}"  %> </h1> <br>
-    <h2>Bio: <%=" #{@helper.bio} "  %></h2> <br>
-    <div class= "review">
-      <h3>Reviews</h3>
-        <%if @reviews.present? %>
-          <% @reviews.each do |review| %>
-          <p>Rating: <%= "#{review.rating} " %> Stars <br>
-          Created: <%= "#{review.created_at} " %> <br>
-          Review: <%= "#{review.description} " %> <br>
-          </p>
-          <hr>
-          <br>
+  <h1><%= "#{@helper.first_name} #{@helper.last_name}" %> </h1> <br>
+    <h2>Bio: <%= "#{@helper.bio}" %></h2> <br>
+      <div class="review">
+        <h3>Reviews</h3>
+          <%if @reviews.present? %>
+            <% @reviews.each do |review| %>
+            <p>Rating: <%= "#{review.rating}" %> Stars <br>
+            Created: <%= "#{review.created_at}" %> <br>
+            Review: <%= "#{review.description}" %> <br>
+            </p>
+            <hr>
+            <br>
+            <% end %>
+          <% else %>
+            <h3><%=" #{@helper.first_name}"  %> does not have any reviews yet.</h3><br>
           <% end %>
-        <% else %>
-          <h3><%=" #{@helper.first_name}"  %> does not have any reviews yet.</h3><br>
-        <% end %>
-    </div>
+      </div>
 </div>
 
 <div class= "container" align= "center">
-    <%=link_to "Request Support", new_helper_request_path(@helper, @request), class: "btn" %>
-    <%=link_to "Back to Helpers", helpers_path, class: "btn" %>
+  <%=link_to "Request Support", new_helper_request_path(@helper, @request), class: "btn" %>
+  <%=link_to "Return to Helpers", helpers_path, class: "btn" %>
 </div>

@@ -12,9 +12,8 @@
 </div>
 <br>
 
-<%= console %>
-<% @helpers.each do |helper| %>
-<div class="container" align="center">
+<div class="user-container">
+  <% @helpers.each do |helper| %>
   <% if helper.availability == true %>
   <div class="container" align="center">
     <div class="row">
@@ -24,7 +23,7 @@
                   <h6 class="f-w-600 m-t-25 m-b-10"><%=" #{helper.first_name}  #{helper.last_name} "  %></h6><br>
                     <div class="user-image">
                       <% if helper.photo.attached? %>
-                        <%= cl_image_tag(helper.photo.key, class: "avatar-large") %>
+                        <%= cl_image_tag helper.photo.key, class: "avatar-large" %>
                       <% end %>
                     </div>
                     <br>
@@ -47,5 +46,3 @@
   <% end %>
   <% end %>
 </div>
-
-<% end %>
