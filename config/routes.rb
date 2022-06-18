@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   resources :helpers, only: [:index, :show] do
 
-    resources :requests, only: [:show,:new, :create, :index]
+    resources :requests, only: [:show,:new, :create, :index] do
+      resources :reviews, only: [:new, :create, :index,:show]
+    end
   end
 
   resources :livehelpers, only: :show do
@@ -14,7 +16,5 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :helpers, only: :index do
-    resources :reviews, only: [:new, :create, :index,:show]
-  end
+
 end

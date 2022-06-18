@@ -22,11 +22,13 @@ class RequestsController < ApplicationController
     @request.location = helper.location
     @request.commuter = current_user
     @request.helper = @helper
-
+    
     if @request.save!
     redirect_to  livehelper_path(@helper)
     else
       render :new
+
+
     end
   end
 
