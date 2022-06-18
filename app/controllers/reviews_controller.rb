@@ -8,17 +8,22 @@ class ReviewsController < ApplicationController
 
   def create
     @helper = User.find(params[:helper_id])
+    #@review.user = current_user
+    #@review.helper = User.find(params[:review][:helper])
+
     @review = Review.new(review_params)
-    @review.request_id = @helper.id
-    @review.helper_id = @helper.id
+    @review.helper = @helper
+    @review.request = Request.find(params[:request_id])
+
     # unless @request.commuter == current_user
       if @review.save!
 
-        redirect_to helper_requests_path(@helper)
+        redirect_to helpers_path(@helper)
       else
         flash[:alert] = "Something went wrong."
         render :new
       end
+
   end
 
   private

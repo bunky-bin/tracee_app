@@ -18,7 +18,7 @@
         This request was made on <%= s.strftime('%d-%m-%Y') %>.
         <br>
         <br>
-        <%= link_to "add review", new_helper_review_path(f.id), class: "link"%>
+        <%= link_to "add review", new_helper_request_review_path(f.helper.id, f.id), class: "link"%>
 
       </div>
     <% end%>
