@@ -24,3 +24,7 @@
   <%=link_to "Request Support", new_helper_request_path(@helper, @request), class: "btn" %>
   <%=link_to "Return to Helpers", helpers_path, class: "btn" %>
 </div>
+
+<% content_for :meta_title, "#{@offer.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @offer.description %>
+<% content_for :meta_image, cl_image_path(@offer.photo.path) %>
