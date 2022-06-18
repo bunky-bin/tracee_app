@@ -1,0 +1,5 @@
+meta_product_name: "Tracee"
+meta_title: "Tracee - Get there safe"
+meta_description: "Connect with people nearby, and get there safe"
+meta_image: "Tracee_logo.jpg" # cover.png should exist in `app/assets/images/`
+twitter_account: "@tracee808"   # required for Twitter Cards - THIS IS  A FAKE TWITTER ACCOUNT
