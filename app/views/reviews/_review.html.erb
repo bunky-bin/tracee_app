@@ -1,13 +1,2 @@
-<div class="review-rating" data-score="<%= review.rating %>"></div>
 <p><%= review.rating %></p>
 <p><%= review.description %></p>
-
-<script>
-  $('.review-rating').raty({
-    readyOnly:true,
-    score: function() {
-      return $(this).attr('data-score');
-    },
-    path: '/assets/'
-  });
-</script>

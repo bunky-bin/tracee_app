@@ -15,14 +15,3 @@
   <%=link_to "Request Support", new_helper_request_path(@helper, @request), class: "btn" %>
   <%=link_to "Return to Helpers", helpers_path, class: "btn" %>
 </div>
-
-<script>
-  $('.review-rating').raty({
-    readyOnly:true,
-    noRatedMsg: "I'm readOnly and I haven't rated yet!"
-    score: function() {
-      return $(this).attr('data-score');
-    },
-    path: '/assets/'
-  });
-</script>
