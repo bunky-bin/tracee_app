@@ -6,16 +6,7 @@
       <div class="review">
         <h3>Reviews</h3>
           <%if @reviews.present? %>
-            <% @reviews.each do |review| %>
-            <p>Rating: <%= "#{review.rating}" %> Stars <br>
-            Created: <%= "#{review.created_at}" %> <br>
-            Review: <%= "#{review.description}" %> <br>
-            </p>
-            <hr>
-            <br>
-            <% end %>
-          <% else %>
-            <h3><%=" #{@helper.first_name}"  %> does not have any reviews yet.</h3><br>
+            <%= render @helper.reviews %>
           <% end %>
       </div>
 </div>
@@ -24,3 +15,14 @@
   <%=link_to "Request Support", new_helper_request_path(@helper, @request), class: "btn" %>
   <%=link_to "Return to Helpers", helpers_path, class: "btn" %>
 </div>
+
+<script>
+  $('.review-rating').raty({
+    readyOnly:true,
+    noRatedMsg: "I'm readOnly and I haven't rated yet!"
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
+</script>

@@ -16,12 +16,12 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #f0ed2f;
+  background: $yellow;
   transition: background 0.3s ease;
 }
 
 .btn-flat:hover {
-  background: #e9cc56;
+  background: $yellow;
   color: white;
 }
 
@@ -36,14 +36,14 @@
 }
 
 .btn-gradient:hover {
-  background: linear-gradient(rgb(220, 220, 22));
+  background: linear-gradient($yellow);
   color: white;
 }
 .link {
   text-decoration: none;
   border-radius: 15%;
-  color: #d63384;
+  color: white;
   background-color: #fbcd42;
-  border-color: #d63384;
+  border-color: none;
   padding: 10px;
 }
