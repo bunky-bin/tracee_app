@@ -1,28 +1,18 @@
-<div class="container">
-  <h1>All Requests</h1>
+<h1>My Requests</h1>
+<br>
+<div class="user-container">
+  <% @requests.each do |f| %>
     <div class="container" align="center">
-    <% @requests.each do |f| %>
-      <div class= "container card-review">
-        <div class= "row">
-          <center><%= cl_image_tag(f.helper.photo.key, class: "img-show-s") %></center>
-          <h1><%=" #{f.helper.first_name}  #{f.helper.last_name}"  %> </h1><br>
-          <h2>Bio: <%=" #{f.helper.bio} "  %></h2><br>
-          <p>My request with <%= f.helper.first_name %> is at <%= f.location%>.<% s = f.created_at %> This request was made on <%= s.strftime('%d-%m-%Y') %>.</p>
-          <br><br>
-          <h3>Reviews</h3>
-          <%if @reviews.present? %>
-            <% @reviews.each do |review| %>
-            <p>Rating: <%= "#{review.rating}" %> Stars <br>
-            Created: <%= "#{review.created_at}" %> <br>
-            Review: <%= "#{review.description}" %> <br>
-            </p>
-            <br>
-            <% end %>
-          <% else %>
-            <%= link_to "add review", new_helper_request_review_path(f.helper.id, f.id), class: "link"%>
-          <% end %>
+      <div class="row">
+        <div class="card user-card">
+          <div class="card-block">
+            <h2><%=" #{f.helper.first_name}  #{f.helper.last_name} "  %></h2>
+            <center> <%= cl_image_tag(f.helper.photo.key, class: "img-show-s") %> </center>
+            <p>Address: <%= f.location%>.<% s = f.created_at %> </p>
+            <p>Request date: <%= s.strftime('%d-%m-%Y') %>.</p>
+            <center><%= link_to "Leave a Review", new_helper_request_review_path(f.helper.id, f.id), class: "btn" %></center>
         </div>
       </div>
-    <% end%>
     </div>
 </div>
+<% end %>
