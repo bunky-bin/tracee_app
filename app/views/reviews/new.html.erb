@@ -1,14 +1,14 @@
 
-<%= console %>
+<h1>New Review</h1>
+
 <div class="container">
   <div class="row">
     <div class="col-xs-4">
-       <%= simple_form_for(Review.new, :url => { :action => "create" }) do |f| %>
-        <%= f.input :description %>
+      <%= simple_form_for(Review.new, :url => { :action => "create" }) do |f| %>
         <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
-        <%= f.submit "Send your review" %>
+        <%= f.input :description %>
+        <%= f.submit "Submit" %>
       <% end %>
     </div>
   </div>
 </div>
-

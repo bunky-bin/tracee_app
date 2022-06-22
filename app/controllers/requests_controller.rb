@@ -5,8 +5,7 @@ class RequestsController < ApplicationController
   attr_reader :helper
 
   def index
-  # if params for helper true
-
+    # if params for helper true
     if params.has_key?(:helper_id)
       commuter = current_user
       @requests = Request.where(commuter: commuter)
@@ -16,19 +15,16 @@ class RequestsController < ApplicationController
   end
 
   def create
-
     @helper = User.find(params[:helper_id])
     @request = Request.new
     @request.location = helper.location
     @request.commuter = current_user
     @request.helper = @helper
-    
+
     if @request.save!
-    redirect_to  livehelper_path(@helper)
+      redirect_to livehelper_path(@helper)
     else
       render :new
-
-
     end
   end
 
@@ -52,4 +48,4 @@ def last_request
   @last_request = Request.all.where(current_user == :id).last
 end
 
-#current_user.requests.last
+# current_user.requests.last
