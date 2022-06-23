@@ -270,4 +270,16 @@ gwen_stacey = User.new(
 gwen_stacey.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 gwen_stacey.save!
 
+sian_black = User.new(
+  first_name: "Sian",
+  last_name: "Black",
+  password: "123456",
+  email: "sianblack@gmail.com",
+  bio: "Beautician, make up artist, and haidresser",
+  location: "2 Heath Street Dartford DA1 2LD",
+  availability: [true, false].sample
+)
+sian_black.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+sian_black.save!
+
 puts "seeds created"
