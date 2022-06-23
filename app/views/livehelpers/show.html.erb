@@ -2,42 +2,43 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Display navigation directions</title>
+<title>Your Request</title>
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css" rel="stylesheet">
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">
+
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
 
 </head>
+
 <body>
-<div class= "container">
-  <div class="column" width="300px">
-            <div class="row justify-content-center" style="margin: 90px;">
-                <div class="col-8">
-
-                  <div class="container" width="500px" >
-                    <center><%= cl_image_tag(@helper.photo.key, class: "img-show") %></center>
-                      <br><br>
-                    <h1><%=" #{@helper.first_name}  #{@helper.last_name}"  %> </h1><br>
-                      <h2>Bio: <%=" #{@helper.bio} "  %></h2><br>
-
-                  </div>
-                  <br>
-                  <br>
-                </div>
-            </div>
+<div class= "container" align="center">
+  <div class="col-xs-4">
+    <h1> Meet Your Helper</h1><br>
+    <%= cl_image_tag(@helper.photo.key, class: "img-show") %> <br><br>
+      <h2><%=" #{@helper.first_name} #{@helper.last_name}" %></h2>
+        <p>Bio: <%=" #{@helper.bio}" %></p> <br>
   </div>
-      <div style="width: 100%; height: 650px;"
-        data-controller="mapbox"
-        data-mapbox-markers-value="<%= @markers.to_json %>"
-        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
 
-      </div>
-        <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
-        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">
-        <div class ="container">
-          <div id="map" style="width: 100%; height: 450px; position: relative;"></div>
-        </div>
+<h1>Directions</h1>
+<div style="width: 100%; height: 350px;"
+  data-controller="mapbox"
+  data-mapbox-markers-value="<%= @markers.to_json %>"
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 
 </div>
+<div class="container" align="center"><br>
+<h1>Complete Trip</h1><br>
+<%= link_to "I Feel Safe", helper_requests_path(current_user), class: "btn" %>
+</div>
+<div class= "container">
+  <div id="map" style="width: 100%; height: 450px; position: relative;">
+  </div>
+</div>
+
+
 </body>
 </html>

@@ -3,20 +3,17 @@
     <br><br>
   <h1><%= "#{@helper.first_name} #{@helper.last_name}" %> </h1> <br>
     <h2>Bio: <%= "#{@helper.bio}" %></h2> <br>
-      <div class="review">
-        <h3>Reviews</h3>
-          <%if @reviews.present? %>
-            <%= render @helper.reviews %>
-          <% end %>
+      <div class="review" align="center">
+        <h2>Reviews</h2>
+        <p>
+        <%if @reviews.present? %>
+          <%= render @helper.reviews %>
+        <% else %>
+          <%= "#{@helper.first_name}" %> does not have any reviews yet.
+        <% end %>
+        </p>
+        <br>
+        <%=link_to "Request Support", new_helper_request_path(@helper, @request), class: "btn" %>
+        <%=link_to "Return to Helpers", helpers_path, class: "btn" %>
       </div>
 </div>
-
-<div class= "container" align= "center">
-  <%=link_to "Request Support", new_helper_request_path(@helper, @request), class: "btn" %>
-  <%=link_to "Return to Helpers", helpers_path, class: "btn" %>
-</div>
-
-<!-- app/views/offers/show.html.erb -->
-<% content_for :meta_title, "#{@offer.name} is on #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_description, @offer.description %>
-<% content_for :meta_image, cl_image_path(@offer.photo.path) %>
