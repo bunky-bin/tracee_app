@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
-    
+
   # Rails image_url helper requires you setup your host to generate the absolute url needed
   # to load your images from the external world (Facebook, Twitter, ...).
 
