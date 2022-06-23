@@ -12,7 +12,7 @@
   align-items: center;
 }
 .footer-links a {
-  color: #ffcc2a;
+  color: $yellow;
   opacity: 0.75;
   text-decoration: none;
   font-size: 24px;
@@ -20,5 +20,5 @@
 }
 .footer-links a:hover {
   opacity: 1;
-  color: #5964ff;
+  color: $purple;
 }

@@ -269,5 +269,153 @@ gwen_stacey = User.new(
 )
 gwen_stacey.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 gwen_stacey.save!
+# ADDED SEEDS 22/6/22 NO PHOTOS ADDED
+
+
+kevin_waersted = User.new(
+  first_name: "Kevin",
+  last_name: "Waersted",
+  password: "123456",
+  email: "kevinwaersted@gmail.com",
+  bio: "Recently retired banker, like to get out walking.",
+  location: "10 Green Street Newhall Harlow CM17 9LN",
+  availability: [true, false].sample
+)
+kevin_waersted.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+kevin_waersted.save!
+
+debbie_rhodes = User.new(
+  first_name: "Debbie",
+  last_name: "Rhodes",
+  password: "123456",
+  email: "debbierhodes@gmail.com",
+  bio: "Charity shop manager, and love karaoke !.",
+  location: "24 Exchange Way Chelmsford CM1 1XD",
+  availability: [true, false].sample
+)
+debbie_rhodes.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+debbie_rhodes.save!
+
+chris_Fyfield = User.new(
+  first_name: "Chris",
+  last_name: "Fyfield",
+  password: "123456",
+  email: "chrisfyfield@gmail.com",
+  bio: "Economist, strtegist, champion women take senior roles, artist.",
+  location: "7 Cornhill Chelmsford CM1 1XE",
+  availability: [true, false].sample
+)
+chris_fyfield.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+chris_fyfield.save!
+
+tamara_rivet= User.new(
+  first_name: "Tamara",
+  last_name: "Rivet",
+  password: "123456",
+  email: "tamararivet@gmail.com",
+  bio: "Nurse in the local GP practice, avid blogger.",
+  location: "35 High Street Chelmsford CM1 1BE",
+  availability: [true, false].sample
+)
+tamara_rivet.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+tamara_rivet.save!
+
+albert_klein= User.new(
+  first_name: "Albert",
+  last_name: "Klein",
+  password: "123456",
+  email: "albertklein@gmail.com",
+  bio: "Retired electrician known as sparky in town.",
+  location: "5 Central House Parkway Chelmsford CM2 0GE",
+  availability: [true, false].sample
+)
+albert_klein.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+albert_klein.save!
+
+gillian_keir= User.new(
+  first_name: "Gillian",
+  last_name: "Keir",
+  password: "123456",
+  email: "gilliankeir@gmail.com",
+  bio: "Worked in media and advertising, now I teach at the local college.",
+  location: "1 Coptfold Road Brentwood CM14 4BN",
+  availability: [true, false].sample
+)
+gillian_keir.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+gillian_keir.save!
+
+allen_riley= User.new(
+  first_name: "Allen",
+  last_name: "Riley",
+  password: "123456",
+  email: "allenriley@gmail.com",
+  bio: "Bus driver, fund raiser for the local community Hall.",
+  location: "7 Seven Arches Road Brentwood CM14 4JG",
+  availability: [true, false].sample
+)
+allen_riley.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+allen_riley.save!
+
+may_hitchcock= User.new(
+  first_name: "May",
+  last_name: "Hitchcock",
+  password: "123456",
+  email: "mayhitchcock@gmail.com",
+  bio: "florist",
+  location: "24 Crown Street Brentwood CM14 4BA",
+  availability: [true, false].sample
+)
+may_hitchcock.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+may_hitchcock.save!
+
+tim_rajah= User.new(
+  first_name: "Tim",
+  last_name: "Rajah",
+  password: "123456",
+  email: "timrajah@gmail.com",
+  bio: "mechanic, specialise in antique and vintage repairs",
+  location: "53 Plevna Road London N9 0QX",
+  availability: [true, false].sample
+)
+tim_rajah.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+tim_rajah.save!
+
+aileen_brown= User.new(
+  first_name: "Aileen",
+  last_name: "Brown",
+  password: "123456",
+  email: "aileenbrown@gmail.com",
+  bio: "teacher",
+  location: "5 Sterling Way London N18 2XZ",
+  availability: [true, false].sample
+)
+aileen_brown.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+aileen_brown.save!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sian_black = User.new(
+  first_name: "Sian",
+  last_name: "Black",
+  password: "123456",
+  email: "sianblack@gmail.com",
+  bio: "Beautician, make up artist, and haidresser",
+  location: "2 Heath Street Dartford DA1 2LD",
+  availability: [true, false].sample
+)
+sian_black.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+sian_black.save!
 
 puts "seeds created"

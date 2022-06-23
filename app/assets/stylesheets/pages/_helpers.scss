@@ -96,7 +96,7 @@ body{
 }
 
 .bg-c-yellow {
-  background: linear-gradient(45deg,#FFB64D,#fccd27);
+  background: linear-gradient(45deg, $yellow,#fccd27);
   border-radius: 5px;
   text-align: center;
   opacity: 0.5;
@@ -114,18 +114,6 @@ body{
   font-size: 30px;
 }
 
-.text-facebook {
-  color: #3B5997;
-}
-
-.text-twitter {
-  color: #42C0FB;
-}
-
-.text-dribbble {
-  color: #EC4A89;
-}
-
 .user-card .card-block .user-image:before {
   bottom: 0;
   border-bottom-left-radius: 50px;
@@ -136,7 +124,7 @@ body{
   content: "";
   width: 100%;
   height: 48%;
-  border: 2px solid #fccd27;
+  border: 2px solid $yellow;
   position: absolute;
   left: 0;
   z-index: 10;
@@ -152,7 +140,7 @@ body{
   content: "";
   width: 100%;
   height: 48%;
-  border: 2px solid #fccd27;
+  border: 2px solid $yellow;
   position: absolute;
   left: 0;
   z-index: 10;
@@ -160,7 +148,7 @@ body{
 
 .btn {
   padding: 8px 30px;
-  background-color: #5964ff;
+  background-color: $purple;
   border: none;
   color: white;
   text-align: center;
@@ -169,7 +157,7 @@ body{
   font-size: 16px;
 }
 .btn:hover {
-  background-color: rgb(252,205,39);
+  background-color: $yellow;
   color: white;
 }
 
@@ -177,13 +165,13 @@ body{
   width: 200px;
   height: 200px;
   object-fit: cover;
-  border: 3px solid #fccd27;
+  border: 3px solid $yellow;
   border-radius: 50%;
 }
 .img-show-s {
   width: 80px;
   height: 80px;
   object-fit: cover;
-  border: 3px solid #fccd27;
+  border: 3px solid $yellow;
   border-radius: 50%;
 }

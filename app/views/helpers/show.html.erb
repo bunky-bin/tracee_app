@@ -1,4 +1,4 @@
-<div class="container card user-card" style="width: 400px" >
+<div class="col-xs-4">
   <center><%= cl_image_tag(@helper.photo.key, class: "img-show") %></center>
     <br><br>
   <h1><%= "#{@helper.first_name} #{@helper.last_name}" %> </h1> <br>
@@ -6,16 +6,7 @@
       <div class="review">
         <h3>Reviews</h3>
           <%if @reviews.present? %>
-            <% @reviews.each do |review| %>
-            <p>Rating: <%= "#{review.rating}" %> Stars <br>
-            Created: <%= "#{review.created_at.to_date.strftime('%m/%d/%Y')}" %> <br>
-            Review: <%= "#{review.description}" %> <br>
-            </p>
-            <hr>
-            <br>
-            <% end %>
-          <% else %>
-            <h3><%=" #{@helper.first_name}"  %> does not have any reviews yet.</h3><br>
+            <%= render @helper.reviews %>
           <% end %>
       </div>
 </div>
