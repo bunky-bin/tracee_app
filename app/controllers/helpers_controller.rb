@@ -15,6 +15,7 @@ class HelpersController < ApplicationController
          #info_window: render_to_string(partial: "info_window", locals: { user: user })
        }
      end
+     
   end
 
   def show
