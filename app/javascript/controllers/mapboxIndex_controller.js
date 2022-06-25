@@ -9,7 +9,7 @@ export default class extends Controller {
   }
 
   connect() {
-    console.log( "hallo")
+
     mapboxgl.accessToken = this.apiKeyValue
       this.map = new mapboxgl.Map({
       container: this.element,
@@ -17,20 +17,20 @@ export default class extends Controller {
     })
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
-    //this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }))
+    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }))
   }
 
   #addMarkersToMap() {
-    console.log(this.markersValue)
     this.markersValue.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window)
       new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
         .addTo(this.map)
-
     });
   }
+
+
 
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()

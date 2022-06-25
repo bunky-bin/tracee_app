@@ -13,7 +13,8 @@
         <% end %>
         </p>
         <br>
-        <%=link_to "Request Support", new_helper_request_path(@helper, @request), class: "btn" %>
+          
+        <%=link_to "Confirm request", helper_requests_path(@helper), method: :post, class: "btn" %>
         <%=link_to "Return to Helpers", helpers_path, class: "btn" %>
       </div>
 </div>

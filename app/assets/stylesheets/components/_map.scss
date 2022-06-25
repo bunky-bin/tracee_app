@@ -3,8 +3,14 @@
 }
 
 .mapboxgl-popup-content {
+
+ opacity: 0.7 ;
+}
+
+.mapboxgl-popup-content p {
   text-align: center;
   font-family: "Open Sans", sans-serif;
+
 }
 
 .mapboxgl-ctrl-geocoder {
