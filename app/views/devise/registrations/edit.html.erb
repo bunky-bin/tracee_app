@@ -9,6 +9,7 @@
           <%= f.error_notification %>
 
           <div class="form-inputs">
+            <%= f.input :image, as: :file, label: "photo" %>
             <%= f.input :email, required: true, autofocus: true %>
             <%= f.input :availability,
                         :as => :select,
