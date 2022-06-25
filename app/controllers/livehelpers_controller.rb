@@ -2,13 +2,15 @@ class LivehelpersController < ApplicationController
   before_action :set_helper
 
   def show
-    @helpers = User.all
+    @helpers = User.geocoded
+    # @users = User.where(user: { availability: true })
+    @users = User.all
     @markers = @helpers.geocoded.map do |user|
       if user.id ==  @last_request.helper_id
         {
           lat: user.latitude,
           lng: user.longitude,
-          # info_window: render_to_string(partial: "info_window", locals: { helper: user.first_name })
+          info_window: render_to_string(partial: "info_window", locals: { user: user })
         }
       end
     end

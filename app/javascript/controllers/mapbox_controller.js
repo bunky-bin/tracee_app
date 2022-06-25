@@ -34,22 +34,22 @@ export default class extends Controller {
       this.map.addControl(directions, 'top-left')
 
       this.markersValue.forEach((marker) => {
-
-        const popup = new mapboxgl.Popup().setHTML(marker) // add this
+        const popup = new mapboxgl.Popup().setHTML(marker.info_window) // add this
         new mapboxgl.Marker()
           .setLngLat([ marker.lng, marker.lat ])
           .setPopup(popup) // add this
           .addTo(this.map)
           destination.push(marker.lng)
           destination.push(marker.lat)
-          console.log(destination)
       });
-
+     
       this.#fitMapToMarkers()
       this.map.on('load',  function() {
         directions.setOrigin([-0.076932,51.531181]); // can be address in form setOrigin("12, Elm Street, NY")
         directions.setDestination(destination);
         const hide = document.querySelector(".directions-control-inputs").style.display = "none";
+        //const inst = document.querySelector(".directions-control-instructions").style.display = "relative";
+        //console.log(inst)
     });
     // this.map.on( 'load', function() {
     //   document.getElementById("directions-control directions-control-inputs").style.display = "none";

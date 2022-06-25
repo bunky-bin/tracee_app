@@ -3,26 +3,13 @@
 <%# <div class="container">
   <div class="col-xs-4">
     <%= simple_form_for(Review.new, :url => { :action => "create" }) do |f| %>
-      <%# <div class="rating">
-        <%= f.collection_radio_buttons :rating, [[1, '1'] ,[2, '2'],[3, '3'],[4, '4'],[5, '5']], :first, :last %>
-      <%# </div><br> %>
-        <%# <%= f.input :description <br> %>
-        <%# <%= f.submit "Submit", class: "btn" %>
-      <%# <% end %>
-  <%# </div> %>
-<%# </div> %>
+      <div class="rating">
+        <%= f.collection_radio_buttons(:rating, [[1, '1'] ,[2, '2'],[3, '3'],[4, '4'],[5, '5']], :first, :last ) %>
 
-
-<div class="container" data-controller="starrating">
-  <div class="row">
-    <div class="col-xs-4">
-      <%# <%= simple_form_for @review do |f| %>
-        <%= simple_form_for(Review.new, :url => { :action => "create" }) do |f| %>
-        <%= f.input :description %>
-        <%# <%= f.input :rating, collection: (1..5).to_a, label: "your review" %>
-        <%= f.input :rating, collection: (1..5).to_a, label: "Your review", input_html: {data: {controller: "star-rating"}} %>
-        <br>
-        <%= f.submit "Share your review" %>
+        
+      </div><br>
+        <%= f.input :description %> <br>
+        <%= f.submit "Submit", class: "btn" %>
       <% end %>
     </div>
   </div>
