@@ -392,20 +392,6 @@ aileen_brown= User.new(
 aileen_brown.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 aileen_brown.save!
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 sian_black = User.new(
   first_name: "Sian",
   last_name: "Black",
