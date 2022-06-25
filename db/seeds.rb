@@ -392,20 +392,6 @@ aileen_brown= User.new(
 aileen_brown.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 aileen_brown.save!
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 sian_black = User.new(
   first_name: "Sian",
   last_name: "Black",
@@ -419,3 +405,17 @@ sian_black.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png'
 sian_black.save!
 
 puts "seeds created"
+
+# puts "Cleaning database..."
+# Restaurant.destroy_all
+
+puts "Creating users ..."
+simone_piccollo = { name: "Simone Piccollo", password: "123456", email: "simonepiccollo@gmail.com", Bio: "full stack developer pro", location: "7 Boundary St, London E2 7JE", availability: [true, false].sample }
+anna_godfrey =  { name: "Anna Godfrey", password: "123456", email: "annagodfrey@gmail.com", Bio: "full stack developer passion for front end", location: "56A Shoreditch High St, London E1 6PQ", availability: [true, false].sample }
+
+[ simone_piccollo, anna_godfrey ].each do |attributes|
+  user = User.create!(attributes)
+  puts "Created #{user.name}"
+end
+
+puts "Finished!"
