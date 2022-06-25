@@ -19,4 +19,5 @@ class HelpersController < ApplicationController
       # @request = Request.new
       @reviews = @helper.reviews
     end
+  end
 end
