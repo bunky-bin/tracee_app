@@ -1,6 +1,7 @@
 import { Controller } from "@hotwired/stimulus";
+import mapboxgl from "mapbox-gl"
 //import style from "@mapbox/mapbox-gl-directions/src/directions_style";
-import mapboxgl, { Marker } from "mapbox-gl";
+//import mapboxgl, { Marker } from "mapbox-gl";
 //import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
 //import "@mapbox/mapbox-gl-directions"
 //import {MapboxDirections} from "@mapbox/mapbox-gl-directions" ;
@@ -25,12 +26,11 @@ export default class extends Controller {
         container: this.element,
         style: "mapbox://styles/mapbox/streets-v10",
         center: [ -0.0771891, 51.5346188],
-        zoom: 11
+        zoom: 4
 
       })
-      //this is the addMarkersMap straight inside the funtion to connect it with directions
       let destination = []
-
+      console.log("hi")
       this.map.addControl(directions, 'top-left')
 
       this.markersValue.forEach((marker) => {
@@ -42,19 +42,15 @@ export default class extends Controller {
           destination.push(marker.lng)
           destination.push(marker.lat)
       });
-     
+
       this.#fitMapToMarkers()
       this.map.on('load',  function() {
         directions.setOrigin([-0.076932,51.531181]); // can be address in form setOrigin("12, Elm Street, NY")
         directions.setDestination(destination);
-        const hide = document.querySelector(".directions-control-inputs").style.display = "none";
-        //const inst = document.querySelector(".directions-control-instructions").style.display = "relative";
-        //console.log(inst)
-    });
-    // this.map.on( 'load', function() {
-    //   document.getElementById("directions-control directions-control-inputs").style.display = "none";
+        document.querySelector(".directions-control-inputs").style.display = "none";
 
-    //  });
+    });
+
   }
     #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
