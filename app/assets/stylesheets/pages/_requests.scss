@@ -35,6 +35,9 @@ p {
   align-self: center;
   border-radius: 5px;
   box-shadow: 3px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-auto-rows: 0.2fr;
 }
 
 .btn {

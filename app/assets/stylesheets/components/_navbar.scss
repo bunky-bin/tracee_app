@@ -1,33 +1,44 @@
-.navbar-lewagon {
-  background: white;
+.navbar {
+  justify-content: space-between;
+  background: $light-gray;
   width: 100%;
   height: 100px;
-  position: absolute;
-  color: white;
   top: 0;
   bottom: 0;
-  padding-right: 50px;
-  padding-left: 30px;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
   z-index: 1100;
+
+  h1 {
+    color: #989898;
+    text-shadow: 0.01px $gray;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1.5px;
+    font-weight:bolder;
+  }
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar .navbar-collapse {
   flex-grow: 0;
+  background: $light-gray;
+  padding: 10px;
+  opacity: 0.8;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar .navbar-brand img {
   width: 110px;
-
 }
 
 .nav-link a {
-  color: white;
+  background: $yellow;
   text-decoration: none;
   font-size: 16px;
 }
 
 .nav-item li {
-  color: white;
+  background: $yellow;
   text-decoration: none;
   font-size: 16px;
 }
