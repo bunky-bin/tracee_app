@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   def new
-    # @helper = User.find(params[:helper_id])
+    @helper = User.find(params[:helper_id])
     @review = Review.new
   end
 
@@ -8,10 +8,10 @@ class ReviewsController < ApplicationController
     # @request = Request.find(params[:request_id])
     @review = Review.new(review_params)
     @helper = User.find(params[:helper_id])
+    @review.helper = @helper
     # @review.user = current_user
-    # @review.helper = User.find(params[:review][:helper])
+    #@review.helper = User.find(params[:review][:helper])
     # @review = Review.new(review_params)
-    # @review.helper = @helper
     # @review.request = Request.find(params[:request_id])
     # unless @request.commuter == current_user
     if @review.save!

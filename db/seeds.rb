@@ -113,17 +113,17 @@ puts "user created"
 
 file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1656190291/Seeds/simone_ebwutb.jpg')
 
-simone_piccollo = User.new(
+simone_piccolo = User.new(
   first_name: "Simone",
-  last_name: "Piccollo",
+  last_name: "Piccolo",
   password: "123456",
   email: "simonepiccollo@gmail.com",
   bio: "Full stack developer pro. Work in the local coffee shop.",
   location: "7 Boundary St, London E2 7JE",
   availability: true
 )
-simone_piccollo.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-simone_piccollo.save!
+simone_piccolo.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+simone_piccolo.save!
 
 file = URI.open('https://res.cloudinary.com/bunkyboy/image/upload/v1655233569/Seeds/seed3_kdqt3i.jpg')
 
