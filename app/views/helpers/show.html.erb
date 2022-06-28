@@ -1,4 +1,4 @@
-<div class="col-xs-4">
+<div class="col-xs-4" style="width: 100%">
   <center><%= cl_image_tag(@helper.photo.key, class: "img-show") %></center>
     <br><br>
   <h1><%= "#{@helper.first_name} #{@helper.last_name}" %> </h1> <br>
@@ -13,8 +13,8 @@
         <% end %>
         </p>
         <br>
-          
-        <%=link_to "Confirm request", helper_requests_path(@helper), method: :post, class: "btn" %>
+
+        <%=link_to "Confirm Request", helper_requests_path(@helper), method: :post, class: "btn" %>
         <%=link_to "Return to Helpers", helpers_path, class: "btn" %>
       </div>
 </div>

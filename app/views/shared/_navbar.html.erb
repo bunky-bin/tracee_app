@@ -1,23 +1,20 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar">
   <div class="container-fluid">
-    <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "https://res.cloudinary.com/bunkyboy/image/upload/v1655051514/tracee_2_vnjtgl.png" %>
+    <% if user_signed_in? %>
+      <h1>Welcome back <%= "#{current_user.first_name}" %>!</h1>
+      <% else %>
+        <%= link_to "/", class: "navbar-brand" do %>
+        <%= image_tag "https://res.cloudinary.com/bunkyboy/image/upload/v1655051514/tracee_2_vnjtgl.png" %>
+      <% end %>
     <% end %>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-          <%= link_to "Became an Helper", "#" , class: "nav-link" %>
-          </li>
-           <li class="nav-item">
-          <input type="checkbox" id="switch" class="checkbox"  >
-          <label for="switch"  class="toggle"> </label>
-          </li>
           <li class="nav-item ">
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
@@ -25,7 +22,6 @@
             <%= link_to "Requests", helper_requests_path(current_user), class: "nav-link" %>
           </li>
           <li class="nav-item">
-
             <%= link_to "Messages",  "#", class: "nav-link" %>
           </li>
           <li class="nav-item">
@@ -36,7 +32,7 @@
                <% if current_user.photo.attached? %>
                 <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                <% else %>
-                <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <%= image_tag "https://res.cloudinary.com/bunkyboy/image/upload/v1655051514/tracee_2_vnjtgl.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                <% end %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "All Requests", helper_requests_path(current_user), class: "dropdown-item" %>

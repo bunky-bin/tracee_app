@@ -1,18 +1,10 @@
 <h1>My Requests</h1>
 <br>
-<div class="user-container">
-  <% @requests.each do |f| %>
-    <div class="container" align="center">
-      <div class="row">
-        <div class="card user-card">
-          <div class="card-block">
-            <h2><%=" #{f.helper.first_name}  #{f.helper.last_name} "  %></h2>
-            <center> <%= cl_image_tag(f.helper.photo.key, class: "img-show-s") %> </center>
-            <p>Address: <%= f.location%>.<% s = f.created_at %> </p>
-            <p>Request date: <%= s.strftime('%d-%m-%Y') %>.</p>
-            <center><%= link_to "Leave a Review", new_helper_request_review_path(f.helper.id, f.id), class: "btn" %></center>
-        </div>
-      </div>
-    </div>
-</div>
+
+<% @requests.each do |f| %>
+  <center> <%= cl_image_tag(f.helper.photo.key, class: "img-show-s") %> </center>
+  <h2><%=" #{f.helper.first_name}  #{f.helper.last_name} "  %></h2>
+  <p>Request date: <% s = f.created_at %><%= s.strftime('%d-%m-%Y') %>.</p>
+  <p>Address: <%= f.location%>.</p>
+  <center> <%= link_to "Leave a Review", new_helper_request_review_path(f.helper.id, f.id), class: "btn" %> </center> <br>
 <% end %>

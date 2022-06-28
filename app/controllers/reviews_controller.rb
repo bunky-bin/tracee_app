@@ -1,7 +1,17 @@
 class ReviewsController < ApplicationController
+
   def new
     @helper = User.find(params[:helper_id])
     @review = Review.new
+  end
+
+  def index
+    if params.has_key?(:helper_id)
+      helper = current_user
+      @reviews = Reviews.where(helper: helper)
+    else
+      @reviews = Review.all
+    end
   end
 
   def create
